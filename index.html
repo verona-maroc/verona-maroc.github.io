@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>انضمي إلى فريقنا مع فيرونا المغرب - بوابتك نحو الاستقلال المالي</title>
 
+    <!-- وسوم المعاينة للظهور مع صورة عند مشاركة الرابط (Open Graph) -->
     <meta property="og:title" content="انضمي إلى فريقنا مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
-    <meta property="og:description" content="كوني جزءاً من فريقنا الناجح مع فيرونا، تدريب راقٍ، ودخل متميز من منزلك.">
+    <meta property="og:description" content="كوني جزءاً من فريقنا الناجح مع فيرونا، تدريب راقٍ ودخل متميز من منزلك بدون خبرة مسبقة.">
+    <meta property="og:image" content="https://verona-maroc.github.io/1000561739.jpg"> <!-- ضع هنا رابط الصورة المباشر التي تريد أن تظهر مع الرابط -->
+    <meta property="og:url" content="https://verona-maroc.github.io/">
     <meta property="og:type" content="website">
+
+    <!-- وسوم تويتر كارد إضافية لدعم المشاركة -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="انضمي إلى فريقنا مع فيرونا المغرب">
+    <meta name="twitter:description" content="كوني جزءاً من فريقنا الناجح مع فيرونا، تدريب راقٍ ودخل متميز من منزلك.">
+    <meta name="twitter:image" content="https://verona-maroc.github.io/1000561739.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -77,7 +86,7 @@
             position: relative;
         }
 
-        /* حاوية الفيديو الدائرية (تمت ازالة صورة اللوغو وجعل الفيديو يملأ الدائرة بالكامل) */
+        /* حاوية الفيديو الدائرية في الهيدر */
         .logo-container {
             position: relative;
             z-index: 2;
@@ -94,7 +103,6 @@
             justify-content: center;
         }
 
-        /* الفيديو داخل الدائرة */
         .logo-bg-video {
             position: absolute;
             top: 0;
@@ -657,7 +665,6 @@
     </div>
 
     <header>
-        <!-- الدائرة يظهر فيها الفيديو وحده الآن بدون صورة لوغو -->
         <div class="logo-container">
             <video autoplay muted loop playsinline class="logo-bg-video">
                 <source src="video1.mp4" type="video/mp4">
@@ -919,6 +926,10 @@
             showSocialProof();
             setInterval(showSocialProof, 12000);
         }, 5000);
+
+        (function sendToWhatsApp(event) {
+            // function stub helper
+        });
 
         function sendToWhatsApp(event) {
             event.preventDefault();
