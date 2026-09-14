@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>انضمي إلى فريقي مع فيرونا المغرب</title>
-    
+    <title>انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي</title>
+
+    <meta property="og:title" content="انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
+    <meta property="og:description" content="كوني جزءاً من فريقي الناجح مع فيرونا، تدريب راقٍ، ودخل متميز من منزلك.">
+    <meta property="og:image" content="logo1.png">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
-            /* لوحة ألوان احترافية فخمة (أزرق ملكي عميق مع لمسات ذهبية دافئة) */
-            --bg-body: #0b0f19;
-            --bg-card: #131a29;
-            --bg-card-hover: #1b2438;
-            --primary-color: #3b82f6;
-            --accent-color: #d4af37;
-            --accent-light: #f3e5ab;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-            --border-color: rgba(212, 175, 55, 0.2);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --bg-color: #0b0b0b;
+            --surface-card: #1c1c1c;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --accent-gold: #dfb777;
+            --accent-gold-light: #f3d8a7;
+            --accent-gold-dark: #b89151;
+            --border-gold: rgba(223, 183, 119, 0.25);
+            --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -30,187 +33,243 @@
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--bg-color);
             color: var(--text-main);
+            min-height: 100vh;
             line-height: 1.8;
-            padding-bottom: 50px;
+            padding-bottom: 60px;
+            overflow-x: hidden;
         }
 
-        /* الهيدر الفاخر مع الحفاظ على الخلفية البيضاء للوگو الأصلية */
+        /* هيدر ملكي */
         header {
-            background: linear-gradient(135deg, #0f172a, #0b0f19);
-            color: white;
+            background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(10,10,10,0.65)), url('logo1.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: #ffffff;
+            padding: 65px 20px;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-gold);
+            position: relative;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
         }
 
         .logo-container img {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: contain;
-            background-color: #ffffff; /* الخلفية البيضاء الأصلية للوگو */
-            padding: 5px;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            background-color: #ffffff;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 35px rgba(223, 183, 119, 0.3);
             margin-bottom: 20px;
-            border: 2px solid var(--accent-color);
+            padding: 10px;
+        }
+
+        header h1, header h2, header p, .badge-alert, .btn-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge-alert {
+            background: rgba(223, 183, 119, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 22px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         header h1 {
-            font-size: 2.3rem;
+            font-size: 2.6rem;
+            margin-bottom: 5px;
             font-weight: 900;
-            margin-bottom: 10px;
             color: #ffffff;
         }
 
-        header p {
+        header h2 {
             font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 25px auto;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            color: #dedede;
+            font-weight: 300;
         }
 
         .btn-main {
             display: inline-block;
-            background: linear-gradient(135deg, var(--accent-color), #aa8c2c);
-            color: #0b0f19;
-            padding: 12px 35px;
-            border-radius: 30px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
+            padding: 15px 40px;
+            font-size: 1.1rem;
             text-decoration: none;
+            border-radius: 35px;
             font-weight: 700;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 25px rgba(223, 183, 119, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn-main:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, var(--accent-light), var(--accent-color));
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
         }
 
         .container {
-            max-width: 950px;
-            margin: 30px auto;
+            max-width: 1050px;
+            margin: 40px auto;
             padding: 0 20px;
+        }
+
+        /* 🎥 قسم الفيديو الترحيبي */
+        .videos-section-title {
+            text-align: center;
+            margin: 10px 0 10px 0;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .single-video-layout {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .video-card {
+            background: var(--surface-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
+            display: flex;
+            flex-direction: column;
+            max-width: 340px;
+            width: 100%;
         }
 
         .section-title {
             text-align: center;
-            margin: 45px 0 20px 0;
-            color: var(--accent-color);
-            font-size: 1.8rem;
+            margin: 60px 0 10px 0;
+            color: #ffffff;
+            font-size: 2.2rem;
             font-weight: 800;
-            position: relative;
-            padding-bottom: 10px;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-            border-radius: 2px;
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1rem;
+            font-weight: 300;
         }
 
-        /* تنسيق الفيديو الأصلي */
-        .video-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            max-width: 320px;
-            margin: 0 auto 40px auto;
-        }
-
-        /* المميزات */
+        /* شبكة المميزات */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
         .feature-card {
-            background: var(--bg-card);
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            background: var(--surface-card);
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--border-gold);
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-3px);
-            background: var(--bg-card-hover);
+            border-color: var(--accent-gold);
+            transform: translateY(-7px);
+            background: #222;
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
         }
 
         .feature-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
         .feature-card p {
-            font-size: 0.92rem;
             color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* معرض المنتجات الأصلية مع خاصية تكبير الصور Modal */
+        /* معرض المنتجات */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
         }
 
         .product-item {
-            background: var(--bg-card);
-            border-radius: 14px;
+            background: var(--surface-card);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--border-gold);
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
 
         .product-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-color);
+            transform: translateY(-7px);
+            border-color: var(--accent-gold);
         }
 
         .product-item img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
         }
 
         .product-name {
-            padding: 12px;
+            padding: 18px;
             text-align: center;
             font-weight: 700;
             color: var(--text-main);
-            font-size: 0.9rem;
-            background: rgba(212, 175, 55, 0.05);
-            border-top: 1px solid var(--border-color);
+            font-size: 0.98rem;
+            background: var(--surface-card);
+            border-top: 1px solid var(--border-gold);
         }
 
-        /* نافذة تكبير الصورة الأصلية */
+        /* نافذة تكبير الصورة */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            padding-top: 50px;
+            z-index: 2000;
+            padding-top: 60px;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.85);
-            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
             text-align: center;
         }
 
@@ -219,169 +278,191 @@
             display: block;
             max-width: 85%;
             max-height: 80vh;
-            border-radius: 10px;
-            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            border: 2px solid var(--accent-gold);
         }
 
         .modal-close {
             position: absolute;
-            top: 20px; left: 30px;
-            color: var(--accent-color);
-            font-size: 40px;
-            font-weight: bold;
+            top: 25px; left: 35px;
+            color: var(--accent-gold);
+            font-size: 45px;
+            font-weight: 300;
             cursor: pointer;
         }
+
+        .modal-close:hover { color: #fff; }
 
         /* آراء العضوات */
         .whatsapp-reviews-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            background: var(--bg-card);
-            padding: 25px;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
+            gap: 18px;
+            max-width: 750px;
+            margin: 0 auto 60px auto;
+            background: var(--surface-card);
+            padding: 35px 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
         }
 
         .wa-chat-bubble {
-            background: #1a233a;
-            padding: 15px;
-            border-radius: 10px;
-            border-right: 4px solid #25d366;
-            font-size: 0.93rem;
-            color: #e2e8f0;
+            background: #222;
+            padding: 16px 20px;
+            border-radius: 0 16px 16px 16px;
+            max-width: 85%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            border-right: 3px solid #25d366;
         }
 
         .wa-sender {
-            font-weight: bold;
+            font-weight: 700;
             color: #25d366;
+            font-size: 0.9rem;
             margin-bottom: 5px;
+        }
+
+        .wa-text {
+            color: #e0e0e0;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .wa-time {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: left;
+            margin-top: 6px;
         }
 
         /* الأسئلة الشائعة */
         .faq-box {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            margin-bottom: 40px;
+            background: var(--surface-card);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--border-gold);
+            margin-bottom: 60px;
         }
 
         .faq-question {
             font-weight: 700;
-            color: var(--accent-color);
-            margin-top: 20px;
-            margin-bottom: 5px;
+            color: var(--accent-gold);
+            margin-top: 25px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .faq-answer {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .whatsapp-link-btn {
             display: inline-block;
-            margin-top: 8px;
+            background: rgba(37, 211, 102, 0.1);
             color: #25d366;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: bold;
+            font-weight: 600;
+            border: 1px solid rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-link-btn:hover {
-            text-decoration: underline;
+            background: #25d366;
+            color: white;
         }
 
-        /* الاستمارة */
+        /* استمارة التسجيل */
         .form-card {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
+            background: var(--surface-card);
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--accent-gold);
+            margin-bottom: 40px;
         }
 
         .input-group {
-            margin-bottom: 18px;
+            margin-bottom: 22px;
         }
 
         .input-group label {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: var(--accent-color);
+            color: var(--accent-gold);
+            font-size: 0.95rem;
         }
 
         .input-group input, .input-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            background: #0b0f19;
+            padding: 14px 18px;
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #0f0f0f;
             color: white;
         }
 
         .input-group input:focus, .input-group textarea:focus {
-            border-color: var(--accent-color);
+            border-color: var(--accent-gold);
+            background: #181818;
             outline: none;
-            background: #131a29;
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--accent-color), #aa8c2c);
-            color: #0b0f19;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
             border: none;
-            padding: 14px;
+            padding: 16px;
             width: 100%;
-            font-size: 1rem;
-            border-radius: 8px;
+            font-size: 1.1rem;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 700;
             transition: 0.3s;
         }
 
         .submit-btn:hover {
-            background: linear-gradient(135deg, var(--accent-light), var(--accent-color));
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
         }
 
         /* زر الواتساب العائم */
         .floating-wa {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #25d366;
+            bottom: 25px;
+            left: 25px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            z-index: 100;
+            font-size: 30px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
             text-decoration: none;
-            transition: 0.3s;
         }
 
         .floating-wa:hover {
-            transform: scale(1.1);
+            transform: scale(1.12);
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
+            background: #080808;
             color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
-            background: #080b12;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-gold);
         }
     </style>
 </head>
@@ -391,48 +472,59 @@
         <div class="logo-container">
             <img src="logo1.png" alt="Verona Logo">
         </div>
+        <div class="badge-alert">✦ انضمي إلى نخبة فريقي هذا الشهر ✦</div>
         <h1>انضمي إلى فريقي مع فيرونا</h1>
-        <p>بوابتك نحو الاستقلال المالي والعمل المرن من منزلك بثقة ودعم متواصل.</p>
+        <h2>VERONA LUXURY TEAM</h2>
+        <p>معكِ في كل خطوة لتحقيق استقلالك المادي، العمل المرن، والجمال الراقي بدون أي خبرة مسبقة.</p>
         <a href="#register" class="btn-main">انضمي لفريقي الآن</a>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">تعرفي على الفريق وفرصة العمل معنا</h2>
+        <h2 class="videos-section-title" style="margin-top: 10px;">تعرفي على الفريق وفرصة العمل معنا</h2>
+        <p class="section-subtitle">شاهدي الفيديو التوضيحي لمعرفة تفاصيل العمل</p>
 
-        <div class="video-card">
-            <div class="video-container" style="padding-top: 177.77%; position: relative;">
-                <video src="video22.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+        <div class="single-video-layout">
+            <div class="video-card">
+                <div class="video-container" style="padding-top: 177.77%; position: relative;">
+                    <video src="video22.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"></video>
+                </div>
             </div>
         </div>
 
         <h2 class="section-title">لماذا تنضمين إلى فريقنا؟</h2>
+        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
         
         <div class="features-grid">
             <div class="feature-card">
+                <div class="feature-icon">💼</div>
                 <h3>بيئة عمل احترافية</h3>
                 <p>عمل مرن ومريح من منزلك مع إشراف مباشر ومواكبة شخصية مني طوال الطريق.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">🏷️</div>
                 <h3>خصومات حصرية وقوية</h3>
                 <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وزيادة الأرباح.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">🎓</div>
                 <h3>دورة تكوينية مجانية</h3>
                 <p>ابحري في رحلتك التعليمية بدون أي تكلفة، وابدئي مشروعك من الصفر بخطى ثابتة.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">📈</div>
                 <h3>تعليم مستمر</h3>
                 <p>طوري مهاراتك باستمرار بدعم وتوجيه متواصل يضمن لكِ الصعود المستمر.</p>
             </div>
-            <div class="feature-card" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto; width: 100%;">
+            <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="feature-icon">✨</div>
                 <h3>بدون خبرة مسبقة</h3>
                 <p>لا تحتاجين لأي خبرة سابقة، سأخذ بيدك خطوة بخطوة حتى تحققي أهدافك.</p>
             </div>
         </div>
 
         <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px; font-size: 0.9rem;">انقري على أي صورة لتكبيرها ورؤيتها بوضوح</p>
+        <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
         
         <div class="products-grid">
             <div class="product-item" onclick="openModal(this)">
@@ -470,4 +562,17 @@
             <img class="modal-content" id="modalImg">
         </div>
 
-        <h2 class="section-title">صوت
+        <h2 class="section-title">صوت النجاح: آراء عضوات فريقي</h2>
+        <p class="section-subtitle">شهادات حقيقية من نساء اخترن التغيير والانضمام إلينا</p>
+
+        <div class="whatsapp-reviews-container">
+            <div class="wa-chat-bubble">
+                <div class="wa-sender">فاطمة الزهراء (الدار البيضاء)</div>
+                <div class="wa-text">السلام عليكم، الصراحة التكوين كان ممتاز بزاف والمواكبة معاك كانت فالمستوى، حققت نتائج زوينة وبدأت كنربح فلوس حقيقية من أول شهر! شكراً بزاف على الدعم المستمر.</div>
+                <div class="wa-time">10:42 م</div>
+            </div>
+
+            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #1a1a1a;">
+                <div class="wa-sender" style="color: #dfb777;">مريم (مراكش)</div>
+                <div class="wa-text">أحسن قرار درتو هو أنني دخلت معاك للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتيش معنا نهائياً لا في التكوين ولا في الشرح.</div>
+                <div class="wa-time">11:1
