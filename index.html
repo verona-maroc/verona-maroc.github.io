@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>انضمي إلى فريقنا مع فيرونا المغرب - بوابتك نحو الاستقلال المالي</title>
 
-    <!-- وسوم المعاينة للظهور مع صورة عند مشاركة الرابط (Open Graph) -->
+    <!-- وسوم المعاينة للظهور مع صورة ورسالة عند مشاركة الرابط (Open Graph) -->
     <meta property="og:title" content="انضمي إلى فريقنا مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
     <meta property="og:description" content="كوني جزءاً من فريقنا الناجح مع فيرونا، تدريب راقٍ ودخل متميز من منزلك بدون خبرة مسبقة.">
-    <meta property="og:image" content="https://verona-maroc.github.io/1000561739.jpg"> <!-- ضع هنا رابط الصورة المباشر التي تريد أن تظهر مع الرابط -->
+    <meta property="og:image" content="https://verona-maroc.github.io/1000561739.jpg">
     <meta property="og:url" content="https://verona-maroc.github.io/">
     <meta property="og:type" content="website">
 
@@ -665,6 +665,7 @@
     </div>
 
     <header>
+        <!-- الدائرة يظهر فيها الفيديو وحده بدون لوغو -->
         <div class="logo-container">
             <video autoplay muted loop playsinline class="logo-bg-video">
                 <source src="video1.mp4" type="video/mp4">
@@ -686,7 +687,8 @@
         <div class="single-video-layout">
             <div class="video-card">
                 <div class="video-container" style="padding-top: 177.77%; position: relative;">
-                    <iframe src="https://www.youtube.com/embed/Op7dJilu8mg?autoplay=1&mute=1&loop=1&playlist=Op7dJilu8mg" title="Verona Video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 20px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- تم إضافة إعدادات تخفيف معلومات قناة اليوتيوب -->
+                    <iframe src="https://www.youtube.com/embed/Op7dJilu8mg?autoplay=1&mute=1&loop=1&playlist=Op7dJilu8mg&controls=1&modestbranding=1&rel=0" title="Verona Video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 20px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -926,10 +928,6 @@
             showSocialProof();
             setInterval(showSocialProof, 12000);
         }, 5000);
-
-        (function sendToWhatsApp(event) {
-            // function stub helper
-        });
 
         function sendToWhatsApp(event) {
             event.preventDefault();
