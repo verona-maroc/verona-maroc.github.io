@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيرونا المغرب - ابدئي رحلة النجاح بخطوات ثابتة</title>
+
+    <!-- إعدادات المعاينة للواتساب -->
+    <meta property="og:title" content="فيرونا المغرب - ابدئي رحلة النجاح بخطوات ثابتة">
+    <meta property="og:description" content="انضمي إلينا اليوم واحصلي على دعم متواصل، تدريب مجاني، ودخل متميز من منزلك مع منتجات فيرونا!">
+    <meta property="og:image" content="logo.jpeg">
+    <meta property="og:type" content="website">
+
+    <!-- تصميم راقي ومتناسق مع اللوغو -->
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #b08d46;
+            --card-bg: #ffffff;
+            --border-color: #eaeaea;
+            --dark-header: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.8;
+            padding-bottom: 50px;
+        }
+
+        /* الشريط الإشهاري المتحرك (Marquee Banner) */
+        .announcement-bar {
+            background-color: var(--dark-header);
+            color: var(--accent-gold);
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marqueeAnimation 30s linear infinite;
+        }
+
+        .marquee-content span {
+            display: inline-block;
+            padding-left: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes marqueeAnimation {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .announcement-bar:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        /* الهيدر الملكي المتناسق مع اللوغو */
+        header {
+            background-color: var(--dark-header);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .logo-container img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        header h2 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            color: #cccccc;
+        }
+
+        .badge-alert {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: #ffffff;
+            padding: 14px 35px;
+            font-size: 1.05rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(197, 160, 89, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* إحصائيات */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 50px 0 8px 0;
+            color: var(--text-main);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-size: 0.98rem;
+        }
+
+        /* المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        /* معرض صور المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .product-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* نافذة تكبير الصورة */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            animation: zoomModal 0.3s;
+        }
+
+        @keyframes zoomModal {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        /* آراء العضوات */
+        .whatsapp-reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            background: #f0f2f5;
+            padding: 30px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .wa-chat-bubble {
+            background: #ffffff;
+            padding: 15px 18px;
+            border-radius: 0 12px 12px 12px;
+            max-width: 85%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .wa-chat-bubble::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -8px;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-top-color: #ffffff;
+            border-right: 0;
+        }
+
+        .wa-sender {
+            font-weight: 700;
+            color: #128c7e;
+            font-size: 0.88rem;
+            margin-bottom: 4px;
+        }
+
+        .wa-text {
+            color: #262626;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .wa-time {
+            font-size: 0.72rem;
+            color: #8c8c8c;
+            text-align: left;
+            margin-top: 4px;
+        }
+
+        /* الأسئلة الشائعة */
+        .faq-box {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            margin-top: 20px;
+            font-size: 1.05rem;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+        }
+
+        .whatsapp-link-btn {
+            display: inline-block;
+            background: #f4f8f6;
+            color: #128c7e;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            border: 1px solid rgba(18, 140, 126, 0.2);
+        }
+
+        .whatsapp-link-btn:hover {
+            background: #128c7e;
+            color: white;
+        }
+
+        /* الاستمارة */
+        .form-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.92rem;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #fafafa;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: var(--accent-gold);
+            background: white;
+            outline: none;
+        }
+
+        .submit-btn {
+            background-color: var(--text-main);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            font-size: 1.05rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-gold);
+        }
+
+        /* عداد الزوار الحي في الأسفل */
+        .live-counter-box {
+            background: var(--card-bg);
+            max-width: 320px;
+            margin: 0 auto 30px auto;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .live-dot {
+            width: 9px;
+            height: 9px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px var(--accent-gold);
+            animation: blinkDot 1.5s infinite;
+        }
+
+        @keyframes blinkDot {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        /* زر الواتساب العائم */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--dark-header);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط الإشهاري المتحرك (Marquee Banner) -->
+    <div class="announcement-bar">
+        <div class="marquee-content">
+            <span>✨ انضمي إلى فريق شركة فيرونا واحصلي على تدريب مجاني ودخل متميز من منزلك</span>
+            <span>🚀 فرصة حقيقية لكل امرأة طموحة لتحقيق استقلالية مالية بدون خبرة مسبقة</span>
+            <span>🎁 مكافآت وهدايا قيمة في انتظار العضوات النشيطات معنا هذا الشهر</span>
+            <span>💬 تواصلي معنا الآن عبر الواتساب وابدئي رحلة النجاح بخطوات ثابتة</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="Verona Logo">
+        </div>
+        <div class="badge-alert">مقاعد محدودة لدورة هذا الشهر</div>
+        <h1>شركة فيرونا</h1>
+        <h2>VERONA PRODUCTS</h2>
+        <p>فرصة حقيقية للنساء الطموحات لتحقيق استقلالية مادية وعمل مرن وبدون خبرة مسبقة.</p>
+        <a href="#register" class="btn-main">انضمي لفريقنا الآن</a>
+    </header>
+
+    <div class="container">
+        
+        <!-- إحصائيات -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-num">+500</div>
+                <div class="stat-text">عضوة ناجحة معنا</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">100%</div>
+                <div class="stat-text">دعم ومتابعة مستمرة</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">0</div>
+                <div class="stat-text">خبرة مسبقة مطلوبة</div>
+            </div>
+        </div>
+
+        <!-- المميزات -->
+        <h2 class="section-title">لماذا تنضمين إلى فيرونا؟</h2>
+        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومحفزة للنجاح</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏠</div>
+                <h3>عمل مرن من المنزل</h3>
+                <p>أديري عملك بكل راحة مباشرة من هاتفك النقال وفي الوقت المناسب لكِ.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>أرباح ومكافآت مجزية</h3>
+                <p>منتجات ذات جودة عالية تضمن لكِ أرباحاً وتطوراً مستمراً بكل ثقة.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>تدريب وتكوين مجاني</h3>
+                <p>نأخذ بيدك خطوة بخطوة من الصفر حتى الاحتراف وبشكل احترافي.</p>
+            </div>
+        </div>
+
+        <!-- معرض صور المنتجات (الصور السبعة الأساسية فقط بدون الشعار) -->
+        <h2 class="section-title">نماذج من منتجات العناية والتجميل</h2>
+        <p class="section-subtitle">اضغطي على أي صورة لتكبيرها والمعاينة بدقة عالية</p>
+        
+        <div class="products-grid">
+            <!-- الصورة 1 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.src='logo.jpeg'">
+                <div class="product-name">لوشن لتفتيح الجسم</div>
+            </div>
+            <!-- الصورة 2 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.src='logo.jpeg'">
+                <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
+            </div>
+            <!-- الصورة 3 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.src='logo.jpeg'">
+                <div class="product-name">جل استحمام بزيت التين والأرغان</div>
+            </div>
+            <!-- الصورة 4 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.src='logo.jpeg'">
+                <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
+            </div>
+            <!-- الصورة 5 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.src='logo.jpeg'">
+                <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
+            </div>
+            <!-- الصورة 6 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.src='logo.jpeg'">
+                <div class="product-name">كريم تفتيح الوجه</div>
+            </div>
+            <!-- الصورة 7 -->
+            <div class="product-item" onclick="openModal(this)">
+                <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.src='logo.jpeg'">
+                <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
+            </div>
+        </div>
+
+        <!-- نافذة عرض الصورة المكبرة -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+
+        <!-- آراء العضوات -->
+        <h2 class="section-title">آراء عضوات فريقنا</h2>
+        <p class="section-subtitle">رسائل حقيقية من عضوات انضممن لشركة فيرونا</p>
+
+        <div class="whatsapp-reviews-container">
+            <div class="wa-chat-bubble">
+                <div class="wa-sender">فاطمة الزهراء (الدار البيضاء)</div>
+                <div class="wa-text">السلام عليكم بنات، الصراحة التدريب كان راائع جداً والدعم مستمر، حققت نتائج ممتازة وبدأت أجني أرباحاً من أول شهر! أنصحكم بقوة.</div>
+                <div class="wa-time">10:42 م</div>
+            </div>
+
+            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 12px 0 12px 12px; background: #dcf8c6;">
+                <div class="wa-sender" style="color: #075e54;">مريم (مراكش)</div>
+                <div class="wa-text">أفضل قرار اتخذته هو الانضمام لفريق فيرونا، العمل مريح من الهاتف والأرباح واضحة والمشرفات ما قصروا معنا في التكوين.</div>
+                <div class="wa-time">11:15 م</div>
+            </div>
+
+            <div class="wa-chat-bubble">
+                <div class="wa-sender">خديجة (أكادير)</div>
+                <div class="wa-text">كنت مترددة في الأول لعدم وجود خبرة، لكن الشرح المبسط والتكوين المجاني خلاني نبدأ بكل ثقة. شكراً لفريق فيرونا ❤️</div>
+                <div class="wa-time">09:20 ص</div>
+            </div>
+        </div>
+
+        <!-- الأسئلة الشائعة -->
+        <h2 class="section-title">أسئلة شائعة</h2>
+        <div class="faq-box">
+            <div class="faq-question">❓ هل أحتاج إلى خبرة سابقة؟</div>
+            <div class="faq-answer">لا، نوفر لكِ تكويناً كاملاً ومجانياً من البداية حتى الاحتراف.</div>
+            <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، لدي استفسار حول الحاجة إلى خبرة مسبقة" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب</a>
+
+            <div class="faq-question">❓ كيف يتم التواصل وبدء العمل؟</div>
+            <div class="faq-answer">فقط املئي الاستمارة أدناه أو تواصلي معنا مباشرة عبر الواتساب لنشرح لكِ كافة التفاصيل.</div>
+            <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في معرفة تفاصيل بدء العمل مع فيرونا" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب</a>
+        </div>
+
+        <!-- استمارة التسجيل -->
+        <div class="form-card" id="register">
+            <h2 class="section-title" style="margin-top:0;">سجلي اهتمامك الآن</h2>
+            <p class="section-subtitle">أدخلي معلوماتك وسنتواصل معك عبر الواتساب فوراً</p>
+            
+            <form onsubmit="sendToWhatsApp(event)">
+                <div class="input-group">
+                    <label>الاسم الكامل:</label>
+                    <input type="text" id="name" required placeholder="اكتبي اسمك هنا">
+                </div>
+                <div class="input-group">
+                    <label>المدينة:</label>
+                    <input type="text" id="city" required placeholder="مدينتك">
+                </div>
+                <div class="input-group">
+                    <label>ملاحظة أو استفسار (اختياري):</label>
+                    <textarea id="message" placeholder="اكتبي رسالتك..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال الطلب عبر الواتساب</button>
+            </form>
+        </div>
+
+        <!-- عداد الزوار الحي في الأسفل -->
+        <div class="live-counter-box">
+            <span class="live-dot"></span>
+            <span>هناك <span id="visitorCount">0</span> شخص يتصفحون الموقع الآن</span>
+        </div>
+
+    </div>
+
+    <!-- زر الواتساب العائم -->
+    <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الاستفسار عن الانضمام إلى شركة فيرونا" class="floating-wa" target="_blank">
+        💬
+    </a>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - شركة فيرونا للتجارة الإلكترونية</p>
+    </footer>
+
+    <!-- البرمجة التفاعلية -->
+    <script>
+        // 1. تكبير الصور
+        function openModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const img = element.querySelector("img");
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // 2. عداد الزوار التلقائي
+        function startVisitorCounter() {
+            const counterElement = document.getElementById("visitorCount");
+            let currentCount = 0; 
+            counterElement.textContent = currentCount;
+
+            const initialRamp = setInterval(() => {
+                currentCount += Math.floor(Math.random() * 4) + 1; 
+                if (currentCount >= 30) {
+                    currentCount = 30;
+                    clearInterval(initialRamp);
+                    startDynamicLoop(); 
+                }
+                counterElement.textContent = currentCount;
+            }, 120);
+
+            function startDynamicLoop() {
+                setInterval(() => {
+                    const change = Math.floor(Math.random() * 6) - 2; 
+                    currentCount += change;
+                    
+                    if (currentCount < 15) currentCount = 18; 
+                    if (currentCount > 45) currentCount = 40;
+
+                    counterElement.textContent = currentCount;
+                }, 4000); 
+            }
+        }
+
+        startVisitorCounter();
+
+        // 3. إرسال الاستمارة للواتساب
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const city = document.getElementById('city').value;
+            const message = document.getElementById('message').value;
+
+            const phone = "212618283321"; 
+            const text = `مرحباً، أرغب في الانضمام إلى شركة فيرونا.%0A%0A*الاسم:* ${name}%0A*المدينة:* ${city}%0A*الرسالة:* ${message || 'لا توجد رسالة إضافية'}`;
+            
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
