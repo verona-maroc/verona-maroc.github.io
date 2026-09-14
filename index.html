@@ -920,6 +920,58 @@
             font-size: 0.9rem;
             border-top: 1px solid var(--border-gold);
         }
+
+        /* --- تنسيقات الإضافة الجديدة للتفاعل البصري والتموج (Micro-interactions) --- */
+        .interactive-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            transform: scale(1);
+        }
+        .interactive-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(147, 51, 234, 0.15);
+        }
+        .interactive-btn:active {
+            transform: scale(0.96) translateY(0);
+        }
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        /* تصميم رسالة التنبيه العائمة الهادئة (Toast Notification) */
+        #custom-toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #111827;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            font-family: inherit;
+            font-size: 14px;
+            z-index: 9999;
+            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #custom-toast.show {
+            bottom: 30px;
+        }
     </style>
 </head>
 <body>
@@ -949,7 +1001,8 @@
             <h1>انضمي إلى فريقنا مع فيرونا</h1>
             <h2>VERONA PRODUCTS PROFESSIONAL</h2>
             <p>معكِ في كل خطوة لتحقيق استقلالك المادي، العمل المرن، والجمال الراقي بدون أي خبرة مسبقة.</p>
-            <a href="#register" class="btn-main">انضمي لفريقنا الآن</a>
+            <!-- أضفنا كلاس interactive-btn هنا للزر الرئيسي -->
+            <a href="#register" class="btn-main interactive-btn" onclick="showToast('مرحباً بكِ! اختاري طريقة التسجيل أسفله ✨')">انضمي لفريقنا الآن</a>
 
             <!-- شارات الثقة تحت الزر الرئيسي -->
             <div class="trust-badges-container" style="max-width: 650px; margin: 20px auto 0 auto;">
@@ -991,27 +1044,27 @@
             <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">💼</div>
                     <h3>بيئة عمل احترافية</h3>
                     <p>عمل مرن ومريح من منزلك مع إشراف مباشر ومواكبة متواصلة طوال الطريق.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">🏷️</div>
                     <h3>خصومات حصرية وقوية</h3>
                     <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وزيادة الأرباح.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">🎓</div>
                     <h3>دورة تكوينية مجانية</h3>
                     <p>ابحري في رحلتك التعليمية بدون أي تكلفة، وابدئي مشروعك من الصفر بخطى ثابتة.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">📈</div>
                     <h3>تعليم مستمر</h3>
                     <p>طوري مهاراتك باستمرار بدعم وتوجيه متواصل يضمن لكِ الصعود المستمر.</p>
                 </div>
-                <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="feature-card interactive-btn" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
                     <div class="feature-icon">✨</div>
                     <h3>بدون خبرة مسبقة</h3>
                     <p>لا تحتاجين لأي خبرة سابقة، سنأخذ بيدك خطوة بخطوة حتى تحققي أهدافك.</p>
@@ -1065,37 +1118,37 @@
             <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
             
             <div class="products-grid">
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.style.display='none'">
                     <div class="product-name">لوشن لتفتيح الجسم</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.style.display='none'">
                     <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.style.display='none'">
                     <div class="product-name">جل استحمام بزيت التين والأرغان</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.style.display='none'">
                     <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.style.display='none'">
                     <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.style.display='none'">
                     <div class="product-name">كريم تفتيح الوجه</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="product-item" onclick="openModal(this)">
+                <div class="product-item interactive-btn" onclick="openModal(this)">
                     <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.style.display='none'">
                     <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
                     <div class="stars-rating">⭐⭐⭐⭐⭐</div>
@@ -1138,13 +1191,13 @@
                 <h3 style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 8px;">عجبتك الفرصة؟ شاركيها مع صديقاتك! 💫</h3>
                 <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">ساهمي في نشر الخير ومساعدة نساء أخريات لتحقيق استقلالهن المالي</p>
                 <div class="share-buttons-grid">
-                    <a href="https://api.whatsapp.com/send?text=اكتشفي فرصة العمل الحر مع فيرونا وحققي استقلالك المادي من منزلك:%20https://verona-maroc.github.io/" target="_blank" class="share-btn share-wa">
+                    <a href="https://api.whatsapp.com/send?text=اكتشفي فرصة العمل الحر مع فيرونا وحققي استقلالك المادي من منزلك:%20https://verona-maroc.github.io/" target="_blank" class="share-btn share-wa interactive-btn" onclick="showToast('تم فتح واتساب للمشاركة 💬')">
                         💬 شاركي عبر واتساب
                     </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://verona-maroc.github.io/" target="_blank" class="share-btn share-fb">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://verona-maroc.github.io/" target="_blank" class="share-btn share-fb interactive-btn" onclick="showToast('تم فتح فيسبوك للمشاركة f')">
                         f شاركي عبر فيسبوك
                     </a>
-                    <button onclick="copyPageLink()" class="share-btn share-copy" style="border: none; cursor: pointer;">
+                    <button onclick="copyPageLink()" class="share-btn share-copy interactive-btn">
                         🔗 نسخ رابط الموقع
                     </button>
                 </div>
@@ -1154,11 +1207,11 @@
             <div class="faq-box">
                 <div class="faq-question">❓ هل أحتاج إلى خبرة سابقة لبدء العمل في الفريق؟</div>
                 <div class="faq-answer">لا تقلقي أبداً، فنحن نتكفل بتوفير دورة تكوينية مجانية كاملة ومتابعة مستمرة لكِ من الصفر حتى الاحتراف.</div>
-                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، لدي استفسار حول الحاجة إلى خبرة مسبقة للانضمام للفريق" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، لدي استفسار حول الحاجة إلى خبرة مسبقة للانضمام للفريق" class="whatsapp-link-btn interactive-btn" target="_blank" onclick="showToast('جاري توجيهك لاستفسارات الواتساب 📱')">اسألي عبر الواتساب مباشرة</a>
 
                 <div class="faq-question">❓ كيف يمكنني الانضمام إلى الفريق وبدء العمل؟</div>
                 <div class="faq-answer">الأمر بسيط جداً، املئي الاستمارة أسفله أو تواصل معنا مباشرة عبر زر الواتساب لنرشدك للخطوات الأولى.</div>
-                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الانضمام إلى الفريق مع فيرونا ومعرفة الخطوات الأولى" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الانضمام إلى الفريق مع فيرونا ومعرفة الخطوات الأولى" class="whatsapp-link-btn interactive-btn" target="_blank" onclick="showToast('جاري توجيهك لاستفسارات الواتساب 📱')">اسألي عبر الواتساب مباشرة</a>
             </div>
 
             <div class="form-card" id="register">
@@ -1178,7 +1231,7 @@
                         <label>ملاحظة أو استفسار (اختياري):</label>
                         <textarea id="message" placeholder="اكتبي استفسارك أو رسالتك إن وجدت..."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">إرسال طلب الانضمام إلى فريقنا</button>
+                    <button type="submit" class="submit-btn interactive-btn">إرسال طلب الانضمام إلى فريقنا</button>
 
                     <!-- شارات الثقة والأمان أسفل نموذج التسجيل -->
                     <div class="trust-badges-container" style="margin-top: 15px;">
@@ -1229,17 +1282,17 @@
             <p class="section-subtitle">كلشي ميسر باش تبدئي طريق النجاح وأنت مرتاحة</p>
 
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">🏠</div>
                     <h3>الخدمة من دارك براحتك</h3>
                     <p>بلا تمارة ديال الخروج وبلا مدير يبرزطك، خدمي فوقت ما بغيتي من التيليفون ديالك.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">🎁</div>
                     <h3>أرباح وامتيازات كبار</h3>
                     <p>استفيدي من منتجات فيرونا الراقية بأثمنة تفضيلية تعطيك أعلى هامش ديال الربح.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-btn">
                     <div class="feature-icon">🤝</div>
                     <h3>مجموعة نسائية متضامنة</h3>
                     <p>غادي تلقاي عائلة ديال النساء كيشجعوك، يعاونوك، ويفرحوا معاك بكل خطوة نجاح.</p>
@@ -1268,7 +1321,7 @@
             </div>
 
             <div style="text-align: center; margin: 40px 0 20px 0;">
-                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قريت قصص النجاح فالموقع وبغيت حتى أنا ندخل للفريق ونبدأ من داري" class="page2-whatsapp-btn" target="_blank">
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قريت قصص النجاح فالموقع وبغيت حتى أنا ندخل للفريق ونبدأ من داري" class="page2-whatsapp-btn interactive-btn" target="_blank" onclick="showToast('جاري فتح الواتساب للتواصل المباشر 📱')">
                     💬 تواصل معنا فواتساب وابدئي دابا
                 </a>
                 <!-- شارات الثقة تحت زر الصفحة الثانية -->
@@ -1282,8 +1335,8 @@
     </div>
 
     <div class="page-pagination">
-        <button id="btnPage1" class="page-btn active" onclick="switchPage(1)">1</button>
-        <button id="btnPage2" class="page-btn" onclick="switchPage(2)">2</button>
+        <button id="btnPage1" class="page-btn active interactive-btn" onclick="switchPage(1)">1</button>
+        <button id="btnPage2" class="page-btn interactive-btn" onclick="switchPage(2)">2</button>
     </div>
 
     <div id="socialProof" class="social-proof-popup">
@@ -1295,10 +1348,10 @@
     </div>
 
     <div class="floating-buttons-container">
-        <a href="tel:+212618283321" class="floating-call" title="اتصال هاتفي مباشر">
+        <a href="tel:+212618283321" class="floating-call interactive-btn" title="اتصال هاتفي مباشر" onclick="showToast('جاري بدء الاتصال الهاتفي 📞')">
             📞
         </a>
-        <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقنا مع فيرونا" class="floating-wa" target="_blank" title="مراسلة عبر الواتساب">
+        <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقنا مع فيرونا" class="floating-wa interactive-btn" target="_blank" title="مراسلة عبر الواتساب" onclick="showToast('جاري تحويلك للواتساب 💬')">
             💬
         </a>
     </div>
@@ -1308,6 +1361,42 @@
     </footer>
 
     <script>
+        // إعداد عنصر التنبيه العائم (Toast Notification) وتأثيرات التموج للأزرار
+        document.addEventListener('DOMContentLoaded', function() {
+            const toast = document.createElement('div');
+            toast.id = 'custom-toast';
+            document.body.appendChild(toast);
+
+            window.showToast = function(message) {
+                toast.innerHTML = `✨ <span>${message}</span>`;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 2500);
+            };
+
+            const buttons = document.querySelectorAll('.interactive-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const circle = document.createElement('span');
+                    const diameter = Math.max(button.clientWidth, button.clientHeight);
+                    const radius = diameter / 2;
+                    
+                    circle.style.width = circle.style.height = `${diameter}px`;
+                    circle.style.left = `${e.clientX - button.getBoundingClientRect().left - radius}px`;
+                    circle.style.top = `${e.clientY - button.getBoundingClientRect().top - radius}px`;
+                    circle.style.position = 'absolute';
+                    circle.classList.add('ripple');
+                    
+                    const existingRipple = button.getElementsByClassName('ripple')[0];
+                    if (existingRipple) {
+                        existingRipple.remove();
+                    }
+                    button.appendChild(circle);
+                });
+            });
+        });
+
         function switchPage(pageNum) {
             document.getElementById('page1').classList.remove('active-page');
             document.getElementById('page2').classList.remove('active-page');
@@ -1333,7 +1422,7 @@
 
         function copyPageLink() {
             navigator.clipboard.writeText(window.location.href).then(() => {
-                alert("✨ تم نسخ رابط الموقع بنجاح! يمكنك مشاركته الآن.");
+                showToast("✨ تم نسخ رابط الموقع بنجاح!");
             });
         }
 
@@ -1402,7 +1491,10 @@
             const phone = "212618283321"; 
             const text = `✨ طلب انضمام جديد إلى فريقنا مع فيرونا:%0A%0A*الاسم:* ${name}%0A*المدينة:* ${city}%0A*الرسالة:* ${message || 'لا توجد ملاحظات إضافية'}`;
             
-            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+            showToast("🚀 جاري إرسال طلبك عبر الواتساب...");
+            setTimeout(() => {
+                window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+            }, 800);
         }
     </script>
 
