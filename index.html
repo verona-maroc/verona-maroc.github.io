@@ -8,7 +8,7 @@
     <!-- إعدادات المعاينة للواتساب -->
     <meta property="og:title" content="انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
     <meta property="og:description" content="كوني جزءاً من فريقي الناجح مع فيرونا، تدريب راقٍ، ودخل متميز من منزلك.">
-    <meta property="og:image" content="logo.jpeg">
+    <meta property="og:image" content="logo1.png">
     <meta property="og:type" content="website">
 
     <!-- خطوط جوجل العربية الفاخرة -->
@@ -73,9 +73,9 @@
             100% { transform: translateX(100%); }
         }
 
-        /* هيدر ملكي بخلفية خفيفة جداً وناعمة */
+        /* هيدر ملكي بخلفية خفيفة جداً وناعمة مع الشعار الجديد logo1.png */
         header {
-            background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(10,10,10,0.65)), url('logo.jpeg');
+            background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(10,10,10,0.65)), url('logo1.png');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -100,13 +100,15 @@
         }
 
         .logo-container img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #111;
             border: 3px solid var(--accent-gold);
             box-shadow: 0 0 35px rgba(223, 183, 119, 0.3);
             margin-bottom: 20px;
+            padding: 10px;
         }
 
         header h1, header h2, header p, .badge-alert, .btn-main {
@@ -359,7 +361,7 @@
 
         .modal-close:hover { color: #fff; }
 
-        /* آراء العضوات (بالدارجة المغربية السلسة والمشجعة) */
+        /* آراء العضوات */
         .whatsapp-reviews-container {
             display: flex;
             flex-direction: column;
@@ -586,10 +588,10 @@
         </div>
     </div>
 
-    <!-- الهيدر الملكي بخلفية خفيفة جداً -->
+    <!-- الهيدر الملكي بخلفية خفيفة جداً مع الشعار الجديد logo1.png -->
     <header>
         <div class="logo-container">
-            <img src="logo.jpeg" alt="Verona Logo">
+            <img src="logo1.png" alt="Verona Logo">
         </div>
         <div class="badge-alert">✦ انضمي إلى نخبة فريقي هذا الشهر ✦</div>
         <h1>انضمي إلى فريقي مع فيرونا</h1>
@@ -654,31 +656,31 @@
         
         <div class="products-grid">
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.src='logo.jpeg'">
+                <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.src='logo1.png'">
                 <div class="product-name">لوشن لتفتيح الجسم</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.src='logo.jpeg'">
+                <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.src='logo1.png'">
                 <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.src='logo.jpeg'">
+                <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.src='logo1.png'">
                 <div class="product-name">جل استحمام بزيت التين والأرغان</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.src='logo.jpeg'">
+                <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.src='logo1.png'">
                 <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.src='logo.jpeg'">
+                <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.src='logo1.png'">
                 <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.src='logo.jpeg'">
+                <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.src='logo1.png'">
                 <div class="product-name">كريم تفتيح الوجه</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.src='logo.jpeg'">
+                <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.src='logo1.png'">
                 <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
             </div>
         </div>
@@ -755,7 +757,7 @@
 
     </div>
 
-    <!-- زر الواتساب العائم الفاخر (موجه للزبونة مباشرة) -->
+    <!-- زر الواتساب العائم الفاخر -->
     <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقك مع فيرونا" class="floating-wa" target="_blank">
         💬
     </a>
@@ -808,14 +810,13 @@
 
         startVisitorCounter();
 
-        // 3. إرسال الاستمارة للواتساب الخاص بالزبونة بتنسيق احترافي
+        // 3. إرسال الاستمارة للواتساب الخاص بكِ
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
             const city = document.getElementById('city').value;
             const message = document.getElementById('message').value;
 
-            // [ملاحظة للزبونة]: استبدلي الرقم أدناه (212618283321) برقم واتساب الخاص بكِ لكي تصلك الطلبات مباشرة
             const phone = "212618283321"; 
             const text = `✨ طلب انضمام جديد إلى فريقي مع فيرونا:%0A%0A*الاسم:* ${name}%0A*المدينة:* ${city}%0A*الرسالة:* ${message || 'لا توجد ملاحظات إضافية'}`;
             
