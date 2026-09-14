@@ -231,7 +231,7 @@
             font-weight: 300;
         }
 
-        /* شبكة المميزات الفخمة (العبارات الجديدة المطورة) */
+        /* شبكة المميزات الفخمة */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -271,6 +271,59 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* قسم أدوات الاستقطاب الذكي (مساعد لك لجلب الناس) */
+        .recruitment-helper {
+            background: linear-gradient(135deg, #181818, #111);
+            border: 1px solid var(--accent-gold);
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .recruitment-helper h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .recruitment-helper p {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .copy-box {
+            background: #0b0b0b;
+            border: 1px dashed var(--accent-gold);
+            padding: 18px;
+            border-radius: 12px;
+            color: #e0e0e0;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .copy-btn {
+            background: var(--accent-gold);
+            color: #111;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            float: left;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-gold-light);
         }
 
         /* معرض المنتجات العصري */
@@ -616,36 +669,57 @@
             </div>
         </div>
 
-        <!-- المميزات (بالصياغة الجديدة والمطورة المستوحاة من طلبك) -->
-        <h2 class="section-title">لماذا اختيار فيرونا؟</h2>
-        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك</p>
+        <!-- لماذا تنضمين إلى فريقنا؟ (العبارة المطلوبة بدقة) -->
+        <h2 class="section-title">لماذا تنضمين إلى فريقنا؟</h2>
+        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
         
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">💼</div>
                 <h3>بيئة عمل احترافية</h3>
-                <p>انضمي للعمل تحت إشراف مديرات المجموعة مع راتب مجزٍ وفرص حقيقية لتطوير دخلك الشخصي.</p>
+                <p>عمل تحت إشراف مديرات المجموعة مع راتب مجزٍ وفرص حقيقية لتطوير دخلك.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🏷️</div>
                 <h3>خصومات حصرية وقوية</h3>
-                <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وتعظيم الأرباح.</p>
+                <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وزيادة الأرباح والأرباح.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🎓</div>
                 <h3>دورة تكوينية مجانية</h3>
-                <p>ابدئي رحلتك التعليمية بدون أي تكلفة، وانطلقي في مشروعك من الصفر بخطى ثابتة ومدروسة.</p>
+                <p>ابحري في رحلتك التعليمية بدون تكلفة، وابدئي مشروعك من الصفر بخطى ثابتة.</p>
             </div>
-            <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+            <div class="feature-card">
                 <div class="feature-icon">📈</div>
                 <h3>تعليم مستمر</h3>
-                <p>استمري في تطوير نفسك ونمّي مهاراتك باستمرار عبر دعم وتوجيه متواصل يرافق كل خطوة.</p>
+                <p>استمري في نفسك، وطوري مهاراتك باستمرار بدعم وتوجيه متواصل.</p>
+            </div>
+            <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="feature-icon">✨</div>
+                <h3>بدون خبرة مسبقة</h3>
+                <p>0 خبرة مسبقة مطلوبة للبدء، نحن نأخذ بيدك خطوة بخطوة نحو القمة.</p>
             </div>
         </div>
 
-        <!-- معرض صور المنتجات -->
-        <h2 class="section-title">مجموعتنا الفاخرة للعناية والتجميل</h2>
-        <p class="section-subtitle">انقري على أي صورة لمعاينتها بدقة عالية وتفاصيل راقية</p>
+        <!-- أداة مساعدة للاستقطاب (رسائل جاهزة لترسليها لمن ترغب في انضمامهن) -->
+        <div class="recruitment-helper">
+            <h3>💡 نصوص جاهزة لاستقطاب وإقناع الناس (انسكيها وأرسليها في واتساب)</h3>
+            <p>استخدمي هذه العبارات الجذابة لترغيب الصديقات والمهتمات بالعمل معك:</p>
+            
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">نسخ النص</button>
+                "السلام عليكم حبيبتي! بغيت نشارك معاك فرصة حقيقية غيرت حياتي وحياة بزاف ديال النساء. خدمة زوينة من الدار، بدون خبرة مسبقة، مع تكوين مجاني 100% ودعم مستمر باش تحققي استقلالك المالي. دخلي شوفي التفاصيل فالموقع وصيفطي لي باش نبدوا معا!"
+            </div>
+
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">نسخ النص</button>
+                "هل تبحثين عن مصدر دخل متميز وأنت في منزلك؟ شركة فيرونا توفر لك بيئة عمل احترافية، تخفيضات كبرى، وتكوين مجاني من الصفر. المقاعد محدودة لنخبة هذا الشهر، انضمي إلينا الآن!"
+            </div>
+        </div>
+
+        <!-- نماذج من منتجات فيرونا المتوفرة للعضوات (العبارة المطلوبة بدقة) -->
+        <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
+        <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
         
         <div class="products-grid">
             <div class="product-item" onclick="openModal(this)">
@@ -774,7 +848,19 @@
             document.getElementById("imageModal").style.display = "none";
         }
 
-        // 2. عداد الزوار التلقائي الحي
+        // 2. نسخ النصوص التسويقية للاستقطاب
+        function copyText(button) {
+            const box = button.parentElement;
+            const textToCopy = box.innerText.replace("نسخ النص", "").trim();
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                button.textContent = "تم النسخ! ✓";
+                setTimeout(() => {
+                    button.textContent = "نسخ النص";
+                }, 2000);
+            });
+        }
+
+        // 3. عداد الزوار التلقائي الحي
         function startVisitorCounter() {
             const counterElement = document.getElementById("visitorCount");
             let currentCount = 0; 
@@ -803,7 +889,7 @@
 
         startVisitorCounter();
 
-        // 3. إرسال الاستمارة للواتساب بتنسيق احترافي
+        // 4. إرسال الاستمارة للواتساب بتنسيق احترافي
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
