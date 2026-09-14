@@ -402,7 +402,7 @@
             flex-direction: column;
             gap: 18px;
             max-width: 750px;
-            margin: 0 auto 60px auto;
+            margin: 0 auto 40px auto;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(5px);
             padding: 35px 25px;
@@ -698,31 +698,6 @@
             display: block;
         }
 
-        /* تنسيقات إضافية خاصة بمحتوى الصفحة الثانية المطور للاستقطاب */
-        .story-box {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid var(--border-gold);
-            box-shadow: var(--shadow-luxury);
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .story-box h3 {
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .story-box p {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
-        }
-
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -971,74 +946,84 @@
         </div>
     </div>
 
-    <!-- الصفحة الثانية: رحلة إقناع متكاملة مخصصة لاستقطاب ربات البيوت والمشتغلات من المنزل -->
+    <!-- الصفحة الثانية: قصص النجاح بالدارجة المغربية على شكل رسائل واتساب جذابة -->
     <div id="page2" class="page-content">
         <div class="container">
             
-            <h2 class="section-title" style="margin-top: 20px;">دليلك الشامل لتحقيق الاستقلال المالي من منزلك</h2>
-            <p class="section-subtitle">كيف تنجحين معنا في فريق فيرونا حتى لو كنتِ تبدئين من الصفر تماماً؟</p>
+            <h2 class="section-title" style="margin-top: 20px;">قصes حقيقية من قلب فريقنا 💬</h2>
+            <p class="section-subtitle">كيفاش نساتل بحالك قدروا يغيروا حياتهم وهم جالسين فديورهم؟ شوفي رسائلهم فواتساب!</p>
 
-            <!-- 1. قسم قصص النجاح الملهمة -->
-            <h3 style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 20px; text-align: center;">🌟 قصص ملهمة من نساء ثقن في أنفسهن وبدأن معنا</h3>
-            
-            <div class="story-box">
-                <h3>قصة أم يحيى (ربة بيت من مدينة فاس)</h3>
-                <p>"كنت قضيت سنوات طويلة محصورة بين أعباء البيت وتربية الأطفال، ولم أكن أتخيل أنني قادرة على تحقيق مدخول خاص بي دون مغادرة منزلي. بفضل انضمامي لفريق فيرونا، وجدت التوجيه الصحيح والشرح البسيط، واليوم ولله الحمد أعمل براحة تامة من هاتفي وأنا بجانب أبنائي وأحقق أرباحاً متميزة تعزز استقلاليتي المالية."</p>
-            </div>
+            <!-- حاوية رسائل الواتساب لقصص النجاح -->
+            <div class="whatsapp-reviews-container" style="margin-bottom: 40px;">
+                
+                <!-- قصة أم يحيى -->
+                <div style="font-size: 0.85rem; color: #128c7e; font-weight: 700; margin-bottom: 6px; text-align: right;">🌟 قصة أم يحيى (ربة بيت من فاس) صيفطتها لينا فواتساب:</div>
+                <div class="wa-chat-bubble">
+                    <div class="wa-sender">أم يحيى - فاس 🏡</div>
+                    <div class="wa-text">"سلام البنات، بغيت نشارك معكم تجربتي باش تستافدو.. أنا كنت غير مقابلة الدار ولولاد، وكنت كنقول مستحيل ندخل مدخول بوحدي بلا ما نخرج للخدمة برى. النهار لي دخلت لفريق فيرونا تبدلات حياتي! لقيت التوجيه الصحيح والشرح لي ساهل بزاف. دابا كنخدم غير من تيليفوني وأنا جالسة مع وليداتي، وكنصور الحمد لله أرباح زوينة حسنات ليا مستوايا المادي. لي مزال مترددة كنقولها زعمي وماتندميش! ❤️"</div>
+                    <div class="wa-time">02:30 م ✓✓</div>
+                </div>
 
-            <div class="story-box">
-                <h3>قصة لطيفة (طالبة جامعية من مراكش)</h3>
-                <p>"كنت أبحث عن عمل مرن يناسب أوقات دراستي ولا يتعارض معها. مع فريق فيرونا، وجدت المرونة المطلوبة والدعم المستمر من الفريق. لم أكن أحمل أي خبرة في المبيعات، لكن التدريب المجاني خطوة بخطوة غير كل شيء وجعلني واثقة من نفسي."</p>
+                <div style="height: 15px;"></div>
+
+                <!-- قصة لطيفة -->
+                <div style="font-size: 0.85rem; color: #7e22ce; font-weight: 700; margin-bottom: 6px; text-align: right;">🎓 قصة لطيفة (طالبة من مراكش) عبرات عليها فواتساب:</div>
+                <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
+                    <div class="wa-sender" style="color: #7e22ce;">لطيفة - مراكش 🌸</div>
+                    <div class="wa-text">"أنا طالبة فالتبريز، كنت محتاجة نخدم باش نخلص مصاريفي ولكن الوقت ديال القراية ما كيسمحش ليا.. منين دخلت مع الفريق لقيت مرونة كبيرة بزاف، والتكوين المجاني علمنا كلشي من الصفر واخا ما كانت عندي حتى شي خبرة فالمبيعات. صراحة أحسن خطوة درتها فحياني هي انضمامي لفيرونا! 🚀"</div>
+                    <div class="wa-time">06:15 م ✓✓</div>
+                </div>
+
             </div>
 
             <!-- 2. قسم "ماذا ستستفيدين معنا؟" -->
-            <h2 class="section-title">ما الذي ستحصلين عليه فور انضمامك إلينا؟</h2>
-            <p class="section-subtitle">كل ما تحتاجينه للنجاح متوفر وميسر خصيصاً لكِ</p>
+            <h2 class="section-title">شنو غاتستافدي معنا؟</h2>
+            <p class="section-subtitle">كلشي ميسر باش تبدئي طريق النجاح وأنت مرتاحة</p>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🏠</div>
-                    <h3>الحرية والعمل من البيت</h3>
-                    <p>لا أوقات عمل صارمة ولا تنقلات متعبة، اعملي من هاتفك المحمول في الوقت الذي يناسب جدولك العائلي.</p>
+                    <h3>الخدمة من دارك براحتك</h3>
+                    <p>بلا تمارة ديال الخروج وبلا مدير يبرزطك، خدمي فوقت ما بغيتي من التيليفون ديالك.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🎁</div>
-                    <h3>امتيازات وهدايا حصرية</h3>
-                    <p>استفيدي من منتجات فيرونا الراقيّة بخصومات تفضيلية تكفل لكِ أعلى هامش ربح ممكن.</p>
+                    <h3>أرباح وامتيازات كبار</h3>
+                    <p>استفيدي من منتجات فيرونا الراقية بأثمنة تفضيلية تعطيك أعلى هامش ديال الربح.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
-                    <h3>مجتمع نسائي داعم</h3>
-                    <p>ستكونين جزءاً من عائلة نسائية متضامنة تشجعك، تدعمك، وتفرح بنجاحك في كل خطوة.</p>
+                    <h3>مجموعة نسائية متضامنة</h3>
+                    <p>غادي تلقاي عائلة ديال النساء كيشجعوك، يعاونوك، ويفرحوا معاك بكل خطوة نجاح.</p>
                 </div>
             </div>
 
             <!-- 3. قسم "كيف تبدئين معنا في 3 خطوات بسيطة؟" -->
-            <h2 class="section-title">كيف تبدئين رحلتك معنا اليوم؟</h2>
-            <p class="section-subtitle">الأمر أبسط مما تتخيلين، فقط 3 خطوات تفصلك عن بدايتك الحقيقية</p>
+            <h2 class="section-title">كيفاش تبدئي معنا دابا؟</h2>
+            <p class="section-subtitle">ساهلة ما فيها تعقيدات، غير 3 خطوات وتكوني معنا</p>
 
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-num-badge">1</div>
-                    <h3>التواصل الأولي</h3>
-                    <p>اضغطي على زر الواتساب أسفله لتسجيل اهتمامك والتحدث معنا بشكل مباشر ومبسط.</p>
+                    <h3>تواصل معنا</h3>
+                    <p>تكليكي على زر الواتساب لتحت باش تدوي معنا مباشرة وتعلني الرغبة ديالك.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num-badge">2</div>
-                    <h3>التكوين والتوجيه</h3>
-                    <p>نمنحك الدورة التكوينية المجانية وكل الأسرار والنصائح للبدء بكل ثقة واطمئنان.</p>
+                    <h3>التكوين والمواكبة</h3>
+                    <p>كنعطيوك الدورة التكوينية مجاناً وكاع الأسرار باش تبدئي بثقة وثبات.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num-badge">3</div>
-                    <h3>انطلاق الأرباح</h3>
-                    <p>تبدئين بالعمل وتحقيق أرباحك الأولى بينما نحن نرافقك وندعمك في كل خطوة.</p>
+                    <h3>بداية الأرباح</h3>
+                    <p>كدخلي لعالم العمل وكتجني أرباحك الأولى وحنا معاك كنساعدوك فالطريق.</p>
                 </div>
             </div>
 
             <!-- زر تفاعلي قوي للتوجه نحو الواتساب مباشرة من الصفحة الثانية -->
             <div style="text-align: center; margin: 40px 0 20px 0;">
-                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قرأت تفاصيل الصفحة الثانية وأرغب في الانضمام إلى الفريق وبدء رحلتي من البيت" class="btn-main" style="font-size: 1.1rem; padding: 15px 40px;" target="_blank">
-                    💬 تواصلي معنا عبر الواتساب وابدئي الآن
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قريت قصص النجاح فالموقع وبغيت حتى أنا ندخل للفريق ونبدأ من داري" class="btn-main" style="font-size: 1.1rem; padding: 15px 40px;" target="_blank">
+                    💬 تواصل معنا فواتساب وابدئي دابا
                 </a>
             </div>
 
