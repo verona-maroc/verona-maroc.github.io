@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>انضمي إلى فريقي مع فيرونا المغرب</title>
-    
+    <title>انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي</title>
+
+    <meta property="og:title" content="انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
+    <meta property="og:description" content="كوني جزءاً من فريقي الناجح مع فيرونا، تدريب راقٍ، ودخل متميز من منزلك.">
+    <meta property="og:image" content="logo1.png">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
-            --bg-body: #0d0d0d;
-            --bg-card: #161616;
-            --bg-card-hover: #1e1e1e;
-            --text-main: #ffffff;
-            --text-muted: #b5b5b5;
-            --gold-primary: #d4af37;
-            --gold-light: #f3e5ab;
-            --gold-dark: #aa8c2c;
-            --border-gold: rgba(212, 175, 55, 0.25);
-            --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.12);
+            --bg-color: #0b0b0b;
+            --surface-color: #141414;
+            --surface-card: #1c1c1c;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --accent-gold: #dfb777;
+            --accent-gold-light: #f3d8a7;
+            --accent-gold-dark: #b89151;
+            --border-gold: rgba(223, 183, 119, 0.25);
+            --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -29,185 +34,326 @@
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--bg-color);
             color: var(--text-main);
+            min-height: 100vh;
             line-height: 1.8;
             padding-bottom: 60px;
+            overflow-x: hidden;
         }
 
+        /* شريط إعلاني متحرك فاخر */
+        .announcement-bar {
+            background: linear-gradient(90deg, #111, #222, #111);
+            color: var(--accent-gold);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marqueeAnimation 35s linear infinite;
+        }
+
+        .marquee-content span {
+            display: inline-block;
+            padding-left: 60px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.8px;
+        }
+
+        @keyframes marqueeAnimation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* هيدر ملكي */
         header {
-            background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(10,10,10,0.98)), url('logo1.png');
+            background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(10,10,10,0.65)), url('logo1.png');
             background-size: cover;
             background-position: center;
-            color: white;
-            text-align: center;
+            background-blend-mode: overlay;
+            color: #ffffff;
             padding: 65px 20px;
-            border-bottom: 1px solid var(--border-gold);
+            text-align: center;
+            border-bottom: 2px solid var(--accent-gold);
             position: relative;
         }
 
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, rgba(223,183,119,0.03) 0%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+
         .logo-container img {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: contain;
-            background-color: #ffffff; /* الخلفية البيضاء الأصلية للوگو */
-            padding: 6px;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+            background-color: #ffffff;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 35px rgba(223, 183, 119, 0.3);
             margin-bottom: 20px;
-            border: 2px solid var(--gold-primary);
+            padding: 10px;
+        }
+
+        header h1, header h2, header p, .badge-alert, .btn-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge-alert {
+            background: rgba(223, 183, 119, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 22px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 18px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(223,183,119,0.1);
         }
 
         header h1 {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
+            margin-bottom: 5px;
             font-weight: 900;
-            margin-bottom: 8px;
             color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        header h2 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+            font-weight: 400;
+            letter-spacing: 3px;
         }
 
         header p {
             font-size: 1.05rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 25px auto;
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+            color: #dedede;
             font-weight: 300;
         }
 
         .btn-main {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #0c0c0c;
-            padding: 14px 38px;
-            border-radius: 30px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
+            padding: 15px 40px;
+            font-size: 1.1rem;
             text-decoration: none;
+            border-radius: 35px;
             font-weight: 700;
-            transition: 0.3s;
-            box-shadow: var(--shadow-gold);
+            box-shadow: 0 8px 25px rgba(223, 183, 119, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn-main:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(223, 183, 119, 0.5);
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
         }
 
         .container {
-            max-width: 960px;
+            max-width: 1050px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
+        /* 🎥 قسم الفيديو الترحيبي */
+        .videos-section-title {
+            text-align: center;
+            margin: 10px 0 10px 0;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .single-video-layout {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .video-card {
+            background: var(--surface-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
+            display: flex;
+            flex-direction: column;
+            max-width: 340px;
+            width: 100%;
+        }
+
+        /* إحصائيات بصرية راقية */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .stat-box {
+            background: var(--surface-card);
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--border-gold);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
         .section-title {
             text-align: center;
-            margin: 50px 0 25px 0;
-            color: var(--gold-primary);
-            font-size: 1.9rem;
+            margin: 60px 0 10px 0;
+            color: #ffffff;
+            font-size: 2.2rem;
             font-weight: 800;
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 35px;
-            font-size: 0.95rem;
+            margin-bottom: 40px;
+            font-size: 1rem;
             font-weight: 300;
         }
 
-        /* تنسيق الفيديو الأصلي */
-        .video-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            max-width: 310px;
-            margin: 0 auto 50px auto;
-        }
-
-        /* المميزات */
+        /* شبكة المميزات */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
         }
 
         .feature-card {
-            background: var(--bg-card);
-            padding: 30px 24px;
+            background: var(--surface-card);
+            padding: 35px 30px;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
             text-align: center;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-5px);
-            background: var(--bg-card-hover);
+            border-color: var(--accent-gold);
+            transform: translateY(-7px);
+            background: #222;
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
         }
 
         .feature-card h3 {
-            color: var(--gold-primary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
             font-weight: 700;
         }
 
         .feature-card p {
-            font-size: 0.92rem;
             color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        /* معرض الصور مع وظيفة التكبير Modal الأصلية */
+        /* معرض المنتجات */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
         }
 
         .product-item {
-            background: var(--bg-card);
+            background: var(--surface-card);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
 
         .product-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-primary);
-            box-shadow: var(--shadow-gold);
+            transform: translateY(-7px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(223, 183, 119, 0.2);
         }
 
         .product-item img {
             width: 100%;
-            height: 220px;
+            height: 250px;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.08);
         }
 
         .product-name {
-            padding: 14px;
+            padding: 18px;
             text-align: center;
             font-weight: 700;
             color: var(--text-main);
-            font-size: 0.9rem;
-            background: var(--bg-card);
+            font-size: 0.98rem;
+            background: var(--surface-card);
             border-top: 1px solid var(--border-gold);
         }
 
-        /* نافذة تكبير الصورة Modal */
+        /* نافذة تكبير الصورة */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             padding-top: 60px;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.92);
             backdrop-filter: blur(8px);
             text-align: center;
         }
@@ -218,15 +364,21 @@
             max-width: 85%;
             max-height: 80vh;
             border-radius: 12px;
-            border: 2px solid var(--gold-primary);
-            box-shadow: 0 0 30px rgba(212,175,55,0.3);
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 0 40px rgba(223,183,119,0.3);
+            animation: zoomModal 0.3s;
+        }
+
+        @keyframes zoomModal {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
         }
 
         .modal-close {
             position: absolute;
             top: 25px; left: 35px;
-            color: var(--gold-primary);
-            font-size: 40px;
+            color: var(--accent-gold);
+            font-size: 45px;
             font-weight: 300;
             cursor: pointer;
             transition: 0.3s;
@@ -238,124 +390,231 @@
         .whatsapp-reviews-container {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            max-width: 720px;
-            margin: 0 auto 50px auto;
-            background: var(--bg-card);
-            padding: 30px 24px;
-            border-radius: 18px;
+            gap: 18px;
+            max-width: 750px;
+            margin: 0 auto 60px auto;
+            background: var(--surface-card);
+            padding: 35px 25px;
+            border-radius: 20px;
             border: 1px solid var(--border-gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            box-shadow: var(--shadow-luxury);
         }
 
         .wa-chat-bubble {
-            background: #1e1e1e;
+            background: #222;
             padding: 16px 20px;
-            border-radius: 14px;
+            border-radius: 0 16px 16px 16px;
+            max-width: 85%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
             border-right: 3px solid #25d366;
-            font-size: 0.93rem;
-            color: #dcdcdc;
         }
 
         .wa-sender {
             font-weight: 700;
             color: #25d366;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .wa-text {
+            color: #e0e0e0;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .wa-time {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: left;
+            margin-top: 6px;
         }
 
         /* الأسئلة الشائعة */
         .faq-box {
-            background: var(--bg-card);
-            padding: 35px;
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background: var(--surface-card);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .faq-question {
             font-weight: 700;
-            color: var(--gold-primary);
-            margin-top: 22px;
-            margin-bottom: 6px;
-            font-size: 1.05rem;
+            color: var(--accent-gold);
+            margin-top: 25px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .faq-answer {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
         .whatsapp-link-btn {
             display: inline-block;
-            margin-top: 10px;
+            background: rgba(37, 211, 102, 0.1);
             color: #25d366;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 700;
+            font-weight: 600;
             transition: 0.3s;
+            border: 1px solid rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-link-btn:hover {
-            text-decoration: underline;
+            background: #25d366;
+            color: white;
         }
 
-        /* الاستمارة */
+        /* استمارة التسجيل */
         .form-card {
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-            border: 1px solid var(--border-gold);
+            background: var(--surface-card);
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--accent-gold);
             margin-bottom: 40px;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .input-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             font-size: 0.95rem;
         }
 
         .input-group input, .input-group textarea {
             width: 100%;
-            padding: 14px 16px;
+            padding: 14px 18px;
             border: 1px solid var(--border-gold);
             border-radius: 10px;
-            font-size: 0.95rem;
-            background: #0a0a0a;
+            font-size: 1rem;
+            background: #0f0f0f;
             color: white;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
 
         .input-group input:focus, .input-group textarea:focus {
-            border-color: var(--gold-primary);
-            background: #141414;
+            border-color: var(--accent-gold);
+            background: #181818;
             outline: none;
-            box-shadow: 0 0 10px rgba(212,175,55,0.2);
+            box-shadow: 0 0 10px rgba(223, 183, 119, 0.2);
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #0c0c0c;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
             border: none;
-            padding: 15px;
+            padding: 16px;
             width: 100%;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             border-radius: 10px;
             cursor: pointer;
             font-weight: 700;
             transition: 0.3s;
-            box-shadow: var(--shadow-gold);
+            box-shadow: 0 5px 20px rgba(223, 183, 119, 0.3);
         }
 
         .submit-btn:hover {
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
+            transform: translateY(-2px);
+        }
+
+        /* عداد الزوار الحي */
+        .live-counter-box {
+            background: var(--surface-card);
+            max-width: 340px;
+            margin: 0 auto 30px auto;
+            padding: 14px 25px;
+            border-radius: 35px;
+            text-align: center;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--border-gold);
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #25d366;
+            animation: blinkDot 1.5s infinite;
+        }
+
+        @keyframes blinkDot {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        /* إشعارات الثقة الحية التفاعلية */
+        .social-proof-popup {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: rgba(28, 28, 28, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
+            padding: 12px 18px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 310px;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.5);
+        }
+
+        .social-proof-popup.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .popup-icon {
+            font-size: 24px;
+            background: rgba(223, 183, 119, 0.15);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--border-gold);
+            flex-shrink: 0;
+        }
+
+        .popup-text {
+            font-size: 0.85rem;
+            color: #e5e5e5;
+            line-height: 1.4;
+        }
+
+        .popup-text strong {
+            color: var(--accent-gold);
+            display: block;
+            font-size: 0.9rem;
         }
 
         /* زر الواتساب العائم */
@@ -365,83 +624,117 @@
             left: 25px;
             background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
-            width: 58px;
-            height: 58px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            font-size: 30px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
             z-index: 1000;
             text-decoration: none;
             transition: 0.3s;
+            border: 2px solid rgba(255,255,255,0.2);
         }
 
         .floating-wa:hover {
-            transform: scale(1.1);
+            transform: scale(1.12);
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            border-top: 1px solid var(--border-gold);
+            padding: 30px;
             background: #080808;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-gold);
         }
     </style>
 </head>
 <body>
 
+    <div class="announcement-bar">
+        <div class="marquee-content">
+            <span>✨ انضمي إلى فريقي الخاص في شركة فيرونا واحصلي على تدريب حصري ودخل متميز من منزلك</span>
+            <span>🚀 فرصة حقيقية لكل امرأة طموحة لتحقيق استقلالية مالية تامة وبدون خبرة مسبقة</span>
+            <span>🎁 مواكبة شخصية ودعم متواصل مني طيلة مسيرتك معنا في الفريق</span>
+            <span>💬 تواصلي معي مباشرة عبر الواتساب لنبدأ رحلة النجاح معاً بخطوات ثابتة ومضمونة</span>
+        </div>
+    </div>
+
     <header>
         <div class="logo-container">
             <img src="logo1.png" alt="Verona Logo">
         </div>
+        <div class="badge-alert">✦ انضمي إلى نخبة فريقي هذا الشهر ✦</div>
         <h1>انضمي إلى فريقي مع فيرونا</h1>
-        <p>بوابتك نحو الاستقلال المالي والعمل المرن من منزلك بثقة ودعم متواصل.</p>
+        <h2>VERONA LUXURY TEAM</h2>
+        <p>معكِ في كل خطوة لتحقيق استقلالك المادي، العمل المرن، والجمال الراقي بدون أي خبرة مسبقة.</p>
         <a href="#register" class="btn-main">انضمي لفريقي الآن</a>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">تعرفي على الفريق وفرصة العمل معنا</h2>
+        <h2 class="videos-section-title" style="margin-top: 10px;">تعرفي على الفريق وفرصة العمل معنا</h2>
         <p class="section-subtitle">شاهدي الفيديو التوضيحي لمعرفة تفاصيل العمل</p>
 
-        <div class="video-card">
-            <div class="video-container" style="padding-top: 177.77%; position: relative;">
-                <video src="video22.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"></video>
+        <div class="single-video-layout">
+            <div class="video-card">
+                <div class="video-container" style="padding-top: 177.77%; position: relative;">
+                    <video src="video22.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-num">+350</div>
+                <div class="stat-text">عضوة في فريقي الناجح</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">100%</div>
+                <div class="stat-text">مواكبـة ودعم شخصي مني</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-num">0</div>
+                <div class="stat-text">خبرة مسبقة مطلوبة</div>
             </div>
         </div>
 
         <h2 class="section-title">لماذا تنضمين إلى فريقنا؟</h2>
-        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتحقيق أهدافك</p>
+        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
         
         <div class="features-grid">
             <div class="feature-card">
+                <div class="feature-icon">💼</div>
                 <h3>بيئة عمل احترافية</h3>
                 <p>عمل مرن ومريح من منزلك مع إشراف مباشر ومواكبة شخصية مني طوال الطريق.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">🏷️</div>
                 <h3>خصومات حصرية وقوية</h3>
                 <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وزيادة الأرباح.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">🎓</div>
                 <h3>دورة تكوينية مجانية</h3>
                 <p>ابحري في رحلتك التعليمية بدون أي تكلفة، وابدئي مشروعك من الصفر بخطى ثابتة.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon">📈</div>
                 <h3>تعليم مستمر</h3>
                 <p>طوري مهاراتك باستمرار بدعم وتوجيه متواصل يضمن لكِ الصعود المستمر.</p>
             </div>
-            <div class="feature-card" style="grid-column: 1 / -1; max-width: 520px; margin: 0 auto; width: 100%;">
+            <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="feature-icon">✨</div>
                 <h3>بدون خبرة مسبقة</h3>
                 <p>لا تحتاجين لأي خبرة سابقة، سأخذ بيدك خطوة بخطوة حتى تحققي أهدافك.</p>
             </div>
         </div>
 
         <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
-        <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح</p>
+        <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
         
         <div class="products-grid">
             <div class="product-item" onclick="openModal(this)">
@@ -480,22 +773,25 @@
         </div>
 
         <h2 class="section-title">صوت النجاح: آراء عضوات فريقي</h2>
-        <p class="section-subtitle">شهادات حقيقية من نساء اخترن التغيير معنا</p>
+        <p class="section-subtitle">شهادات حقيقية من نساء اخترن التغيير والانضمام إلينا</p>
 
         <div class="whatsapp-reviews-container">
             <div class="wa-chat-bubble">
                 <div class="wa-sender">فاطمة الزهراء (الدار البيضاء)</div>
                 <div class="wa-text">السلام عليكم، الصراحة التكوين كان ممتاز بزاف والمواكبة معاك كانت فالمستوى، حققت نتائج زوينة وبدأت كنربح فلوس حقيقية من أول شهر! شكراً بزاف على الدعم المستمر.</div>
+                <div class="wa-time">10:42 م</div>
             </div>
 
-            <div class="wa-chat-bubble">
-                <div class="wa-sender">مريم (مراكش)</div>
+            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #1a1a1a;">
+                <div class="wa-sender" style="color: #dfb777;">مريم (مراكش)</div>
                 <div class="wa-text">أحسن قرار درتو هو أنني دخلت معاك للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتيش معنا نهائياً لا في التكوين ولا في الشرح.</div>
+                <div class="wa-time">11:15 م</div>
             </div>
 
             <div class="wa-chat-bubble">
                 <div class="wa-sender">خديجة (أكادير)</div>
                 <div class="wa-text">كنت مترددة فالبداية حيتاش ما عندي حتى شي خبرة، ولكن الشرح المبسط ديالك والتكوين المجاني خلاوني نبدأ بكل ثقة وثبات. فرحانة بزاف حيتاش معاك فالفريق ❤️</div>
+                <div class="wa-time">09:20 ص</div>
             </div>
         </div>
 
@@ -505,4 +801,144 @@
             <div class="faq-answer">لا تقلقي أبداً، فأنا أتكفل بتوفير دورة تكوينية مجانية كاملة ومتابعة شخصية لكِ من الصفر حتى الاحتراف.</div>
             <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، لدي استفسار حول الحاجة إلى خبرة مسبقة للانضمام لفريقك" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
 
-            <div class="faq-question" style="margin-top: 25px;">
+            <div class="faq-question">❓ كيف يمكنني الانضمام إلى فريقك وبدء العمل؟</div>
+            <div class="faq-answer">الأمر بسيط جداً، املئي الاستمارة أسفله أو تواصلي معي مباشرة عبر زر الواتساب لأرشدك للخطوات الأولى.</div>
+            <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الانضمام إلى فريقك مع فيرونا ومعرفة الخطوات الأولى" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
+        </div>
+
+        <div class="form-card" id="register">
+            <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">سجلي طلب انضمامك إلى فريقي</h2>
+            <p class="section-subtitle">أدخلي معلوماتك وسأتواصل معك شخصياً عبر الواتساب في أقرب وقت</p>
+            
+            <form onsubmit="sendToWhatsApp(event)">
+                <div class="input-group">
+                    <label>الاسم الكامل:</label>
+                    <input type="text" id="name" required placeholder="اكتبي اسمك الكامل هنا">
+                </div>
+                <div class="input-group">
+                    <label>المدينة:</label>
+                    <input type="text" id="city" required placeholder="اكتبي مدينتك">
+                </div>
+                <div class="input-group">
+                    <label>ملاحظة أو استفسار (اختياري):</label>
+                    <textarea id="message" placeholder="اكتبي استفسارك أو رسالتك إن وجدت..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال طلب الانضمام إلى فريقي</button>
+            </form>
+        </div>
+
+        <div class="live-counter-box">
+            <span class="live-dot"></span>
+            <span>هناك <span id="visitorCount">0</span> شخص يتصفحون الموقع الآن</span>
+        </div>
+
+    </div>
+
+    <div id="socialProof" class="social-proof-popup">
+        <div class="popup-icon">✨</div>
+        <div class="popup-text">
+            <strong id="proofName">فاطمة من الدار البيضاء</strong>
+            <span>انضمت للتو إلى فريق فيرونا 🚀</span>
+        </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقك مع فيرونا" class="floating-wa" target="_blank">
+        💬
+    </a>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - فريق فيرونا المغرب</p>
+    </footer>
+
+    <script>
+        // 1. تكبير الصور
+        function openModal(element) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const img = element.querySelector("img");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // 2. عداد الزوار التلقائي
+        function startVisitorCounter() {
+            const counterElement = document.getElementById("visitorCount");
+            let currentCount = 0; 
+            counterElement.textContent = currentCount;
+
+            const initialRamp = setInterval(() => {
+                currentCount += Math.floor(Math.random() * 4) + 1; 
+                if (currentCount >= 28) {
+                    currentCount = 28;
+                    clearInterval(initialRamp);
+                    startDynamicLoop(); 
+                }
+                counterElement.textContent = currentCount;
+            }, 120);
+
+            function startDynamicLoop() {
+                setInterval(() => {
+                    const change = Math.floor(Math.random() * 6) - 2; 
+                    currentCount += change;
+                    if (currentCount < 16) currentCount = 18; 
+                    if (currentCount > 42) currentCount = 38;
+                    counterElement.textContent = currentCount;
+                }, 4000); 
+            }
+        }
+
+        startVisitorCounter();
+
+        // 3. إشعارات الثقة الحية التفاعلية
+        const proofList = [
+            { name: "فاطمة الزهراء", city: "الدار البيضاء" },
+            { name: "مريم", city: "مراكش" },
+            { name: "خديجة", city: "أكادير" },
+            { name: "إيمان", city: "الرباط" },
+            { name: "سناء", city: "طنجة" },
+            { name: "حليمة", city: "فاس" },
+            { name: "سمية", city: "مكناس" },
+            { name: "هجر", city: "وجدة" },
+            { name: "أسماء", city: "أزمور" },
+            { name: "نزهة", city: "تطوان" }
+        ];
+
+        function showSocialProof() {
+            const popup = document.getElementById("socialProof");
+            const proofNameEl = document.getElementById("proofName");
+            
+            const randomPerson = proofList[Math.floor(Math.random() * proofList.length)];
+            proofNameEl.textContent = `${randomPerson.name} من ${randomPerson.city}`;
+
+            popup.classList.add("show");
+
+            setTimeout(() => {
+                popup.classList.remove("show");
+            }, 4000);
+        }
+
+        setTimeout(() => {
+            showSocialProof();
+            setInterval(showSocialProof, 12000);
+        }, 5000);
+
+        // 4. إرسال الاستمارة للواتساب الخاص بكِ
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const city = document.getElementById('city').value;
+            const message = document.getElementById('message').value;
+
+            const phone = "212618283321"; 
+            const text = `✨ طلب انضمام جديد إلى فريقي مع فيرونا:%0A%0A*الاسم:* ${name}%0A*المدينة:* ${city}%0A*الرسالة:* ${message || 'لا توجد ملاحظات إضافية'}`;
+            
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
