@@ -14,15 +14,15 @@
 
     <style>
         :root {
-            --bg-color: #0d0914;
-            --surface-card: #171124;
-            --text-main: #f5f5f5;
-            --text-muted: #b3a8c4;
-            --accent-gold: #c084fc;
-            --accent-gold-light: #e879f9;
-            --accent-gold-dark: #9333ea;
-            --border-gold: rgba(192, 132, 252, 0.25);
-            --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.6);
+            --bg-color: #fcfbfe;
+            --surface-card: #ffffff;
+            --text-main: #2b2633;
+            --text-muted: #6b637a;
+            --accent-gold: #9333ea;
+            --accent-gold-light: #c084fc;
+            --accent-gold-dark: #7e22ce;
+            --border-gold: rgba(147, 51, 234, 0.18);
+            --shadow-luxury: 0 10px 30px rgba(147, 51, 234, 0.08);
         }
 
         * {
@@ -32,13 +32,12 @@
             font-family: 'Tajawal', sans-serif;
         }
 
-        /* 🌟 الخلفية الفاخرة الجديدة والواضحة */
+        /* 🌟 الخلفية البيضاء النقية والراقية */
         body {
             background-color: var(--bg-color);
             background-image: 
-                radial-gradient(circle at 50% 15%, rgba(192, 132, 252, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 15% 85%, rgba(147, 51, 234, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(232, 121, 249, 0.08) 0%, transparent 35%);
+                radial-gradient(circle at 50% 10%, rgba(192, 132, 252, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 10% 90%, rgba(147, 51, 234, 0.05) 0%, transparent 40%);
             background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
@@ -49,7 +48,7 @@
 
         /* شريط إعلاني متحرك فاخر */
         .announcement-bar {
-            background: linear-gradient(90deg, #181124, #271b3b, #181124);
+            background: linear-gradient(90deg, #f3e8ff, #fae8ff, #f3e8ff);
             color: var(--accent-gold);
             padding: 10px 0;
             overflow: hidden;
@@ -66,7 +65,7 @@
         .marquee-content span {
             display: inline-block;
             padding-left: 60px;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9rem;
             letter-spacing: 0.8px;
         }
@@ -76,16 +75,16 @@
             100% { transform: translateX(100%); }
         }
 
-        /* هيدر ملكي */
+        /* هيدر ملكي أنيق */
         header {
-            background: linear-gradient(135deg, rgba(22,16,34,0.7), rgba(13,9,20,0.85)), url('logo1.png');
+            background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(243,232,255,0.7)), url('logo1.png');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
-            color: #ffffff;
+            color: var(--text-main);
             padding: 65px 20px;
             text-align: center;
-            border-bottom: 2px solid var(--accent-gold);
+            border-bottom: 2px solid var(--border-gold);
             position: relative;
         }
 
@@ -93,7 +92,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle, rgba(192,132,252,0.06) 0%, rgba(0,0,0,0.6) 100%);
+            background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 100%);
             pointer-events: none;
         }
 
@@ -109,7 +108,7 @@
             object-fit: contain;
             background-color: #ffffff;
             border: 3px solid var(--accent-gold);
-            box-shadow: 0 0 35px rgba(192, 132, 252, 0.3);
+            box-shadow: 0 0 25px rgba(147, 51, 234, 0.2);
             margin-bottom: 20px;
             padding: 10px;
         }
@@ -120,24 +119,24 @@
         }
 
         .badge-alert {
-            background: rgba(192, 132, 252, 0.12);
+            background: rgba(147, 51, 234, 0.08);
             color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
+            border: 1px solid var(--border-gold);
             padding: 6px 22px;
             border-radius: 30px;
             font-size: 0.85rem;
             display: inline-block;
             margin-bottom: 18px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1px;
-            box-shadow: 0 0 15px rgba(192,132,252,0.1);
+            box-shadow: 0 0 15px rgba(147,51,234,0.05);
         }
 
         header h1 {
             font-size: 2.6rem;
             margin-bottom: 5px;
             font-weight: 900;
-            color: #ffffff;
+            color: var(--text-main);
             letter-spacing: 0.5px;
         }
 
@@ -145,7 +144,7 @@
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: var(--accent-gold);
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: 3px;
         }
 
@@ -153,8 +152,8 @@
             font-size: 1.05rem;
             max-width: 650px;
             margin: 0 auto 30px auto;
-            color: #dedede;
-            font-weight: 300;
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
         .btn-main {
@@ -166,13 +165,13 @@
             text-decoration: none;
             border-radius: 35px;
             font-weight: 700;
-            box-shadow: 0 8px 25px rgba(192, 132, 252, 0.3);
+            box-shadow: 0 8px 25px rgba(147, 51, 234, 0.25);
             transition: all 0.3s ease;
         }
 
         .btn-main:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(192, 132, 252, 0.5);
+            box-shadow: 0 12px 30px rgba(147, 51, 234, 0.4);
             background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
         }
 
@@ -242,13 +241,13 @@
         .stat-text {
             color: var(--text-muted);
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .section-title {
             text-align: center;
             margin: 60px 0 10px 0;
-            color: #ffffff;
+            color: var(--text-main);
             font-size: 2.2rem;
             font-weight: 800;
         }
@@ -258,7 +257,7 @@
             color: var(--text-muted);
             margin-bottom: 40px;
             font-size: 1rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .features-grid {
@@ -281,7 +280,7 @@
         .feature-card:hover {
             border-color: var(--accent-gold);
             transform: translateY(-7px);
-            background: #231935;
+            background: #faf5ff;
         }
 
         .feature-icon {
@@ -322,7 +321,7 @@
         .product-item:hover {
             transform: translateY(-7px);
             border-color: var(--accent-gold);
-            box-shadow: 0 15px 35px rgba(192, 132, 252, 0.2);
+            box-shadow: 0 15px 35px rgba(147, 51, 234, 0.15);
         }
 
         .product-item img {
@@ -353,7 +352,7 @@
             padding-top: 60px;
             left: 0; top: 0;
             width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.92);
+            background-color: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(8px);
             text-align: center;
         }
@@ -365,7 +364,7 @@
             max-height: 80vh;
             border-radius: 12px;
             border: 2px solid var(--accent-gold);
-            box-shadow: 0 0 40px rgba(192,132,252,0.3);
+            box-shadow: 0 0 40px rgba(147,51,234,0.3);
             animation: zoomModal 0.3s;
         }
 
@@ -377,7 +376,7 @@
         .modal-close {
             position: absolute;
             top: 25px; left: 35px;
-            color: var(--accent-gold);
+            color: var(--accent-gold-light);
             font-size: 45px;
             font-weight: 300;
             cursor: pointer;
@@ -400,24 +399,24 @@
         }
 
         .wa-chat-bubble {
-            background: #231935;
+            background: #faf5ff;
             padding: 16px 20px;
             border-radius: 0 16px 16px 16px;
             max-width: 85%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             position: relative;
             border-right: 3px solid #25d366;
         }
 
         .wa-sender {
             font-weight: 700;
-            color: #25d366;
+            color: #128c7e;
             font-size: 0.9rem;
             margin-bottom: 5px;
         }
 
         .wa-text {
-            color: #e0e0e0;
+            color: #333333;
             font-size: 0.98rem;
             line-height: 1.6;
         }
@@ -454,20 +453,21 @@
 
         .whatsapp-link-btn {
             display: inline-block;
-            background: rgba(37, 211, 102, 0.1);
-            color: #25d366;
+            background: rgba(37, 211, 102, 0.08);
+            color: #128c7e;
             padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.85rem;
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
-            border: 1px solid rgba(37, 211, 102, 0.3);
+            border: 1px solid rgba(37, 211, 102, 0.25);
         }
 
         .whatsapp-link-btn:hover {
             background: #25d366;
             color: white;
+            border-color: #25d366;
         }
 
         .form-card {
@@ -475,7 +475,7 @@
             padding: 45px;
             border-radius: 20px;
             box-shadow: var(--shadow-luxury);
-            border: 1px solid var(--accent-gold);
+            border: 1px solid var(--border-gold);
             margin-bottom: 40px;
         }
 
@@ -486,7 +486,7 @@
         .input-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--accent-gold);
             font-size: 0.95rem;
         }
@@ -497,16 +497,16 @@
             border: 1px solid var(--border-gold);
             border-radius: 10px;
             font-size: 1rem;
-            background: #110c1a;
-            color: white;
+            background: #faf9fb;
+            color: var(--text-main);
             transition: all 0.3s;
         }
 
         .input-group input:focus, .input-group textarea:focus {
             border-color: var(--accent-gold);
-            background: #1a1226;
+            background: #ffffff;
             outline: none;
-            box-shadow: 0 0 10px rgba(192, 132, 252, 0.2);
+            box-shadow: 0 0 10px rgba(147, 51, 234, 0.15);
         }
 
         .submit-btn {
@@ -520,7 +520,7 @@
             cursor: pointer;
             font-weight: 700;
             transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(192, 132, 252, 0.3);
+            box-shadow: 0 5px 20px rgba(147, 51, 234, 0.25);
         }
 
         .submit-btn:hover {
@@ -566,12 +566,12 @@
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: rgba(23, 17, 36, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid var(--accent-gold);
+            border: 1px solid var(--border-gold);
             padding: 12px 18px;
             border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             z-index: 1500;
             display: flex;
             align-items: center;
@@ -589,7 +589,7 @@
 
         .popup-icon {
             font-size: 24px;
-            background: rgba(192, 132, 252, 0.15);
+            background: rgba(147, 51, 234, 0.1);
             width: 40px;
             height: 40px;
             display: flex;
@@ -602,7 +602,7 @@
 
         .popup-text {
             font-size: 0.85rem;
-            color: #e5e5e5;
+            color: var(--text-muted);
             line-height: 1.4;
         }
 
@@ -625,11 +625,11 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             text-decoration: none;
             transition: 0.3s;
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.8);
         }
 
         .floating-wa:hover {
@@ -639,7 +639,7 @@
         footer {
             text-align: center;
             padding: 30px;
-            background: #09060f;
+            background: #f3f0f7;
             color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-gold);
@@ -776,8 +776,8 @@
                 <div class="wa-time">10:42 م</div>
             </div>
 
-            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #1a1226;">
-                <div class="wa-sender" style="color: #c084fc;">مريم (مراكش)</div>
+            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
+                <div class="wa-sender" style="color: #7e22ce;">مريم (مراكش)</div>
                 <div class="wa-text">أحسن قرار درتو هو أنني دخلت معاك للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتيش معنا نهائياً لا في التكوين ولا في الشرح.</div>
                 <div class="wa-time">11:15 م</div>
             </div>
