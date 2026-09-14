@@ -66,6 +66,22 @@
             }
         }
 
+        /* تأثير نبض خاص بالزر الأزرق للاتصال */
+        @keyframes callPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+
         .announcement-bar {
             background: linear-gradient(90deg, #f3e8ff, #fae8ff, #f3e8ff);
             color: var(--accent-gold);
@@ -667,19 +683,22 @@
             text-decoration: none;
             transition: 0.3s;
             border: 2px solid rgba(255,255,255,0.9);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
-        /* تطبيق نبضات القلب على زر الواتساب العائم وبشكل مستمر */
+        /* تطبيق نبضات القلب المستمرة على زر الواتساب الأخضر */
         .floating-wa {
             background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
             color: white;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             animation: whatsappPulse 2s infinite;
         }
 
+        /* تطبيق نبضات مستمرة على زر الاتصال الأزرق باش يتناغم مع زر الواتساب */
         .floating-call {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            animation: callPulse 2s infinite;
         }
 
         .floating-wa:hover, .floating-call:hover {
@@ -743,7 +762,6 @@
             text-align: center;
         }
 
-        /* تعديل رقم الخطوات في الصفحة الثانية ليصبح باللون الأخضر */
         .step-num-badge {
             width: 45px;
             height: 45px;
@@ -772,7 +790,6 @@
             line-height: 1.6;
         }
 
-        /* زر الواتساب في الصفحة الثانية بنفس اللون الأخضر وتأثير النبض البصري */
         .page2-whatsapp-btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
@@ -807,7 +824,6 @@
 </head>
 <body>
 
-    <!-- الصفحة الأولى: المحتوى الأصلي بالكامل بدون أي تغيير -->
     <div id="page1" class="page-content active-page">
         <div class="announcement-bar">
             <div class="marquee-content">
@@ -997,17 +1013,14 @@
         </div>
     </div>
 
-    <!-- الصفحة الثانية: مع الأرقام وأزرار الواتساب باللون الأخضر وتأثير النبض -->
     <div id="page2" class="page-content">
         <div class="container">
             
             <h2 class="section-title" style="margin-top: 20px;">قصص حقيقية من قلب فريقنا 💬</h2>
             <p class="section-subtitle">كيفاش نساتل بحالك قدروا يغيروا حياتهم وهم جالسين فديورهم؟ شوفي رسائلهم فواتساب!</p>
 
-            <!-- حاوية رسائل الواتساب لقصص النجاح -->
             <div class="whatsapp-reviews-container" style="margin-bottom: 40px;">
                 
-                <!-- قصة أم يحيى -->
                 <div style="font-size: 0.85rem; color: #128c7e; font-weight: 700; margin-bottom: 6px; text-align: right;">🌟 قصة أم يحيى (ربة بيت من فاس) صيفطتها لينا فواتساب:</div>
                 <div class="wa-chat-bubble">
                     <div class="wa-sender">أم يحيى - فاس 🏡</div>
@@ -1017,7 +1030,6 @@
 
                 <div style="height: 15px;"></div>
 
-                <!-- قصة لطيفة -->
                 <div style="font-size: 0.85rem; color: #7e22ce; font-weight: 700; margin-bottom: 6px; text-align: right;">🌸 قصة لطيفة (طالبة من مراكش) عبرات عليها فواتساب:</div>
                 <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
                     <div class="wa-sender" style="color: #7e22ce;">لطيفة - مراكش 🌸</div>
@@ -1027,7 +1039,6 @@
 
             </div>
 
-            <!-- قسم "ماذا ستستفيدين معنا؟" -->
             <h2 class="section-title">شنو غاتستافدي معنا؟</h2>
             <p class="section-subtitle">كلشي ميسر باش تبدئي طريق النجاح وأنت مرتاحة</p>
 
@@ -1049,7 +1060,6 @@
                 </div>
             </div>
 
-            <!-- قسم الخطوات (1، 2، 3 بالأخضر) -->
             <h2 class="section-title">كيفاش تبدئي معنا دابا؟</h2>
             <p class="section-subtitle">ساهلة ما فيها تعقيدات، غير 3 خطوات وتكوني معنا</p>
 
@@ -1071,7 +1081,6 @@
                 </div>
             </div>
 
-            <!-- زر الواتساب في الصفحة الثانية باللون الأخضر وتأثير النبض -->
             <div style="text-align: center; margin: 40px 0 20px 0;">
                 <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قريت قصص النجاح فالموقع وبغيت حتى أنا ندخل للفريق ونبدأ من داري" class="page2-whatsapp-btn" target="_blank">
                     💬 تواصل معنا فواتساب وابدئي دابا
@@ -1081,7 +1090,6 @@
         </div>
     </div>
 
-    <!-- أزرار الانتقال بين الصفحات في الأسفل -->
     <div class="page-pagination">
         <button id="btnPage1" class="page-btn active" onclick="switchPage(1)">1</button>
         <button id="btnPage2" class="page-btn" onclick="switchPage(2)">2</button>
