@@ -41,6 +41,24 @@
             overflow-x: hidden;
         }
 
+        /* شريط الإعلان العلوي */
+        .top-announcement-bar {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
+            padding: 10px 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .top-announcement-bar marquee {
+            font-weight: 800;
+        }
+
         /* هيدر ملكي */
         header {
             background: linear-gradient(135deg, rgba(15,15,15,0.7), rgba(5,5,5,0.85)), url('logo1.png');
@@ -467,6 +485,13 @@
     </style>
 </head>
 <body>
+
+    <!-- الشريط الإعلاني العلوي -->
+    <div class="top-announcement-bar">
+        <marquee behavior="scroll" direction="right" scrollamount="5">
+            ✨ عرض خاص وفوري: انضمي الآن إلى فريقي مع فيرونا المغرب واستفيدي من تكوين مجاني، هدايا قيمة، ومواكبة شخصية لتحقيق استقلالك المادي! 🚀
+        </marquee>
+    </div>
 
     <header>
         <div class="logo-container">
