@@ -15,8 +15,7 @@
     <style>
         :root {
             --bg-color: #0d0914;
-            --surface-color: #161022;
-            --surface-card: #201730;
+            --surface-card: #171124;
             --text-main: #f5f5f5;
             --text-muted: #b3a8c4;
             --accent-gold: #c084fc;
@@ -33,16 +32,19 @@
             font-family: 'Tajawal', sans-serif;
         }
 
+        /* 🌟 الخلفية الفاخرة الجديدة والواضحة */
         body {
             background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(192, 132, 252, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(147, 51, 234, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(232, 121, 249, 0.08) 0%, transparent 35%);
+            background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.8;
             padding-bottom: 60px;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 10%, rgba(192, 132, 252, 0.08) 0%, transparent 50%),
-                              radial-gradient(circle at 10% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
         /* شريط إعلاني متحرك فاخر */
@@ -180,7 +182,6 @@
             padding: 0 20px;
         }
 
-        /* 🎥 قسم الفيديو الترحيبي */
         .videos-section-title {
             text-align: center;
             margin: 10px 0 10px 0;
@@ -207,7 +208,6 @@
             width: 100%;
         }
 
-        /* إحصائيات بصرية راقية */
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -261,7 +261,6 @@
             font-weight: 300;
         }
 
-        /* شبكة المميزات */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -282,7 +281,7 @@
         .feature-card:hover {
             border-color: var(--accent-gold);
             transform: translateY(-7px);
-            background: #281d3d;
+            background: #231935;
         }
 
         .feature-icon {
@@ -303,7 +302,6 @@
             line-height: 1.6;
         }
 
-        /* معرض المنتجات */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -348,7 +346,6 @@
             border-top: 1px solid var(--border-gold);
         }
 
-        /* نافذة تكبير الصورة */
         .modal {
             display: none;
             position: fixed;
@@ -389,7 +386,6 @@
 
         .modal-close:hover { color: #fff; }
 
-        /* آراء العضوات */
         .whatsapp-reviews-container {
             display: flex;
             flex-direction: column;
@@ -404,7 +400,7 @@
         }
 
         .wa-chat-bubble {
-            background: #281d3d;
+            background: #231935;
             padding: 16px 20px;
             border-radius: 0 16px 16px 16px;
             max-width: 85%;
@@ -433,7 +429,6 @@
             margin-top: 6px;
         }
 
-        /* الأسئلة الشائعة */
         .faq-box {
             background: var(--surface-card);
             padding: 40px;
@@ -475,7 +470,6 @@
             color: white;
         }
 
-        /* استمارة التسجيل */
         .form-card {
             background: var(--surface-card);
             padding: 45px;
@@ -503,14 +497,14 @@
             border: 1px solid var(--border-gold);
             border-radius: 10px;
             font-size: 1rem;
-            background: #140e1f;
+            background: #110c1a;
             color: white;
             transition: all 0.3s;
         }
 
         .input-group input:focus, .input-group textarea:focus {
             border-color: var(--accent-gold);
-            background: #201730;
+            background: #1a1226;
             outline: none;
             box-shadow: 0 0 10px rgba(192, 132, 252, 0.2);
         }
@@ -534,7 +528,6 @@
             transform: translateY(-2px);
         }
 
-        /* عداد الزوار الحي */
         .live-counter-box {
             background: var(--surface-card);
             max-width: 340px;
@@ -569,12 +562,11 @@
             100% { opacity: 0.3; }
         }
 
-        /* إشعارات الثقة الحية التفاعلية */
         .social-proof-popup {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: rgba(32, 23, 48, 0.95);
+            background: rgba(23, 17, 36, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid var(--accent-gold);
             padding: 12px 18px;
@@ -620,7 +612,6 @@
             font-size: 0.9rem;
         }
 
-        /* زر الواتساب العائم */
         .floating-wa {
             position: fixed;
             bottom: 25px;
@@ -785,7 +776,7 @@
                 <div class="wa-time">10:42 م</div>
             </div>
 
-            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #201730;">
+            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #1a1226;">
                 <div class="wa-sender" style="color: #c084fc;">مريم (مراكش)</div>
                 <div class="wa-text">أحسن قرار درتو هو أنني دخلت معاك للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتيش معنا نهائياً لا في التكوين ولا في الشرح.</div>
                 <div class="wa-time">11:15 م</div>
@@ -854,7 +845,6 @@
     </footer>
 
     <script>
-        // 1. تكبير الصور
         function openModal(element) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
@@ -867,7 +857,6 @@
             document.getElementById("imageModal").style.display = "none";
         }
 
-        // 2. عداد الزوار التلقائي
         function startVisitorCounter() {
             const counterElement = document.getElementById("visitorCount");
             let currentCount = 0; 
@@ -896,7 +885,6 @@
 
         startVisitorCounter();
 
-        // 3. إشعارات الثقة الحية التفاعلية
         const proofList = [
             { name: "فاطمة الزهراء", city: "الدار البيضاء" },
             { name: "مريم", city: "مراكش" },
@@ -929,7 +917,6 @@
             setInterval(showSocialProof, 12000);
         }, 5000);
 
-        // 4. إرسال الاستمارة للواتساب الخاص بكِ
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
