@@ -660,6 +660,48 @@
             transform: scale(1.12);
         }
 
+        /* تنسيق أزرار التنقل بين الصفحات في الأسفل */
+        .page-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 20px 0;
+        }
+
+        .page-btn {
+            background: #ffffff;
+            color: var(--accent-gold);
+            border: 1px solid var(--border-gold);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: var(--shadow-luxury);
+        }
+
+        .page-btn.active {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #ffffff;
+            border-color: var(--accent-gold);
+        }
+
+        .page-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+        }
+
+        /* حاوية الصفحات (لإظهار وإخفاء المحتوى بسلاسة) */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active-page {
+            display: block;
+        }
+
         footer {
             text-align: center;
             padding: 30px;
@@ -673,193 +715,210 @@
 </head>
 <body>
 
-    <!-- شريط الترحيب المتحرك -->
-    <div class="announcement-bar">
-        <div class="marquee-content">
-            <span>✨ انضمي إلى فريقنا الخاص في شركة فيرونا واحصلي على تدريب حصري ودخل متميز من منزلك</span>
-            <span>🚀 فرصة حقيقية لكل امرأة طموحة لتحقيق استقلالية مالية تامة وبدون خبرة مسبقة</span>
-            <span>🎁 مواكبة شخصية ودعم متواصل طيلة مسيرتك معنا في الفريق</span>
-            <span>💬 تواصلي معنا مباشرة عبر الواتساب لنبدأ رحلة النجاح معاً بخطوات ثابتة ومضمونة</span>
-        </div>
-    </div>
-
-    <!-- شريط المقاعد المحدودة (بدون عداد وقت) -->
-    <div class="limited-seats-bar">
-        ⚡ مقاعد محدودة لدورة هذا الشهر - سارع (ي) بالتسجيل!
-    </div>
-
-    <header>
-        <div class="logo-container">
-            <video autoplay muted loop playsinline class="logo-bg-video">
-                <source src="video1.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="badge-alert">✦ انضمي إلى نخبة فريقنا هذا الشهر ✦</div>
-        <h1>انضمي إلى فريقنا مع فيرونا</h1>
-        <h2>VERONA PRODUCTS PROFESSIONAL</h2>
-        <p>معكِ في كل خطوة لتحقيق استقلالك المادي، العمل المرن، والجمال الراقي بدون أي خبرة مسبقة.</p>
-        <a href="#register" class="btn-main">انضمي لفريقنا الآن</a>
-    </header>
-
-    <div class="container">
-        
-        <h2 class="videos-section-title" style="margin-top: 10px;">تعرفي على الفريق وفرصة العمل معنا</h2>
-        <p class="section-subtitle">شاهدي الفيديو التوضيحي لمعرفة تفاصيل العمل</p>
-
-        <div class="single-video-layout">
-            <div class="video-card">
-                <div class="video-container" style="padding-top: 177.77%; position: relative;">
-                    <iframe src="https://www.youtube.com/embed/Op7dJilu8mg?autoplay=1&mute=1&loop=1&playlist=Op7dJilu8mg&controls=1&modestbranding=1&rel=0" title="Verona Video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 20px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+    <!-- الصفحة الأولى: المحتوى الأصلي بالكامل بدون أي نقصان -->
+    <div id="page1" class="page-content active-page">
+        <!-- شريط الترحيب المتحرك -->
+        <div class="announcement-bar">
+            <div class="marquee-content">
+                <span>✨ انضمي إلى فريقنا الخاص في شركة فيرونا واحصلي على تدريب حصري ودخل متميز من منزلك</span>
+                <span>🚀 فرصة حقيقية لكل امرأة طموحة لتحقيق استقلالية مالية تامة وبدون خبرة مسبقة</span>
+                <span>🎁 مواكبة شخصية ودعم متواصل طيلة مسيرتك معنا في الفريق</span>
+                <span>💬 تواصلي معنا مباشرة عبر الواتساب لنبدأ رحلة النجاح معاً بخطوات ثابتة ومضمونة</span>
             </div>
         </div>
 
-        <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-num">+350</div>
-                <div class="stat-text">عضوة في فريقنا الناجح</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-num">100%</div>
-                <div class="stat-text">مواكبـة ودعم مستمر</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-num">0</div>
-                <div class="stat-text">خبرة مسبقة مطلوبة</div>
-            </div>
+        <!-- شريط المقاعد المحدودة (بدون عداد وقت) -->
+        <div class="limited-seats-bar">
+            ⚡ مقاعد محدودة لدورة هذا الشهر - سارع (ي) بالتسجيل!
         </div>
 
-        <h2 class="section-title">لماذا تنضمين إلى فريقنا؟</h2>
-        <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">💼</div>
-                <h3>بيئة عمل احترافية</h3>
-                <p>عمل مرن ومريح من منزلك مع إشراف مباشر ومواكبة متواصلة طوال الطريق.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏷️</div>
-                <h3>خصومات حصرية وقوية</h3>
-                <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وزيادة الأرباح.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎓</div>
-                <h3>دورة تكوينية مجانية</h3>
-                <p>ابحري في رحلتك التعليمية بدون أي تكلفة، وابدئي مشروعك من الصفر بخطى ثابتة.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>تعليم مستمر</h3>
-                <p>طوري مهاراتك باستمرار بدعم وتوجيه متواصل يضمن لكِ الصعود المستمر.</p>
-            </div>
-            <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
-                <div class="feature-icon">✨</div>
-                <h3>بدون خبرة مسبقة</h3>
-                <p>لا تحتاجين لأي خبرة سابقة، سنأخذ بيدك خطوة بخطوة حتى تحققي أهدافك.</p>
-            </div>
-        </div>
-
-        <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
-        <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
-        
-        <div class="products-grid">
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.style.display='none'">
-                <div class="product-name">لوشن لتفتيح الجسم</div>
-            </div>
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.style.display='none'">
-                <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
-            </div>
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.style.display='none'">
-                <div class="product-name">جل استحمام بزيت التين والأرغان</div>
-            </div>
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.style.display='none'">
-                <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
-            </div>
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.style.display='none'">
-                <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
-            </div>
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.style.display='none'">
-                <div class="product-name">كريم تفتيح الوجه</div>
-            </div>
-            <div class="product-item" onclick="openModal(this)">
-                <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.style.display='none'">
-                <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
-            </div>
-        </div>
-
-        <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="modal-close">&times;</span>
-            <img class="modal-content" id="modalImg">
-        </div>
-
-        <h2 class="section-title">صوت النجاح: آراء عضوات فريقنا</h2>
-        <p class="section-subtitle">شهادات حقيقية من نساء اخترن التغيير والانضمام إلينا</p>
-
-        <div class="whatsapp-reviews-container">
-            <div class="wa-chat-bubble">
-                <div class="wa-sender">فاطمة الزهراء (الدار البيضاء)</div>
-                <div class="wa-text">السلام عليكم، الصراحة التكوين كان ممتاز بزاف والمواكبة كانت فالمستوى، حققت نتائج زوينة وبدأت كنربح فلوس حقيقية من أول شهر! شكراً بزاف على الدعم المستمر.</div>
-                <div class="wa-time">10:42 م</div>
+        <header>
+            <div class="logo-container">
+                <video autoplay muted loop playsinline class="logo-bg-video">
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
             </div>
 
-            <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
-                <div class="wa-sender" style="color: #7e22ce;">مريم (مراكش)</div>
-                <div class="wa-text">أحسن قرار درتو هو أنني دخلت للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتوش معنا نهائياً لا في التكوين ولا في الشرح.</div>
-                <div class="wa-time">11:15 م</div>
-            </div>
+            <div class="badge-alert">✦ انضمي إلى نخبة فريقنا هذا الشهر ✦</div>
+            <h1>انضمي إلى فريقنا مع فيرونا</h1>
+            <h2>VERONA PRODUCTS PROFESSIONAL</h2>
+            <p>معكِ في كل خطوة لتحقيق استقلالك المادي، العمل المرن، والجمال الراقي بدون أي خبرة مسبقة.</p>
+            <a href="#register" class="btn-main">انضمي لفريقنا الآن</a>
+        </header>
 
-            <div class="wa-chat-bubble">
-                <div class="wa-sender">خديجة (أكادير)</div>
-                <div class="wa-text">كنت مترددة فالبداية حيتاش ما عندي حتى شي خبرة، ولكن الشرح المبسط والتكوين المجاني خلاوني نبدأ بكل ثقة وثبات. فرحانة بزاف حيتاش معاكم فالفريق ❤️</div>
-                <div class="wa-time">09:20 ص</div>
-            </div>
-        </div>
-
-        <h2 class="section-title">الأسئلة الشائعة</h2>
-        <div class="faq-box">
-            <div class="faq-question">❓ هل أحتاج إلى خبرة سابقة لبدء العمل في الفريق؟</div>
-            <div class="faq-answer">لا تقلقي أبداً، فنحن نتكفل بتوفير دورة تكوينية مجانية كاملة ومتابعة مستمرة لكِ من الصفر حتى الاحتراف.</div>
-            <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، لدي استفسار حول الحاجة إلى خبرة مسبقة للانضمام للفريق" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
-
-            <div class="faq-question">❓ كيف يمكنني الانضمام إلى الفريق وبدء العمل؟</div>
-            <div class="faq-answer">الأمر بسيط جداً، املئي الاستمارة أسفله أو تواصل معنا مباشرة عبر زر الواتساب لنرشدك للخطوات الأولى.</div>
-            <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الانضمام إلى الفريق مع فيرونا ومعرفة الخطوات الأولى" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
-        </div>
-
-        <div class="form-card" id="register">
-            <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">سجلي طلب انضمامك إلى فريقنا</h2>
-            <p class="section-subtitle">أدخلي معلوماتك وسنتواصل معك قريباً عبر الواتساب</p>
+        <div class="container">
             
-            <form onsubmit="sendToWhatsApp(event)">
-                <div class="input-group">
-                    <label>الاسم الكامل:</label>
-                    <input type="text" id="name" required placeholder="اكتبي اسمك الكامل هنا">
-                </div>
-                <div class="input-group">
-                    <label>المدينة:</label>
-                    <input type="text" id="city" required placeholder="اكتبي مدينتك">
-                </div>
-                <div class="input-group">
-                    <label>ملاحظة أو استفسار (اختياري):</label>
-                    <textarea id="message" placeholder="اكتبي استفسارك أو رسالتك إن وجدت..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">إرسال طلب الانضمام إلى فريقنا</button>
-            </form>
-        </div>
+            <h2 class="videos-section-title" style="margin-top: 10px;">تعرفي على الفريق وفرصة العمل معنا</h2>
+            <p class="section-subtitle">شاهدي الفيديو التوضيحي لمعرفة تفاصيل العمل</p>
 
-        <div class="live-counter-box">
-            <span class="live-dot"></span>
-            <span>هناك <span id="visitorCount">0</span> شخص يتصفحون الموقع الآن</span>
-        </div>
+            <div class="single-video-layout">
+                <div class="video-card">
+                    <div class="video-container" style="padding-top: 177.77%; position: relative;">
+                        <iframe src="https://www.youtube.com/embed/Op7dJilu8mg?autoplay=1&mute=1&loop=1&playlist=Op7dJilu8mg&controls=1&modestbranding=1&rel=0" title="Verona Video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 20px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
 
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-num">+350</div>
+                    <div class="stat-text">عضوة في فريقنا الناجح</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-text">مواكبـة ودعم مستمر</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">0</div>
+                    <div class="stat-text">خبرة مسبقة مطلوبة</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">لماذا تنضمين إلى فريقنا؟</h2>
+            <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>بيئة عمل احترافية</h3>
+                    <p>عمل مرن ومريح من منزلك مع إشراف مباشر ومواكبة متواصلة طوال الطريق.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>خصومات حصرية وقوية</h3>
+                    <p>وفري حتى 30% على المنتجات واستفيدي من مضاعفة المبيعات وزيادة الأرباح.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>دورة تكوينية مجانية</h3>
+                    <p>ابحري في رحلتك التعليمية بدون أي تكلفة، وابدئي مشروعك من الصفر بخطى ثابتة.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>تعليم مستمر</h3>
+                    <p>طوري مهاراتك باستمرار بدعم وتوجيه متواصل يضمن لكِ الصعود المستمر.</p>
+                </div>
+                <div class="feature-card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                    <div class="feature-icon">✨</div>
+                    <h3>بدون خبرة مسبقة</h3>
+                    <p>لا تحتاجين لأي خبرة سابقة، سنأخذ بيدك خطوة بخطوة حتى تحققي أهدافك.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
+            <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
+            
+            <div class="products-grid">
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.style.display='none'">
+                    <div class="product-name">لوشن لتفتيح الجسم</div>
+                </div>
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.style.display='none'">
+                    <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
+                </div>
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.style.display='none'">
+                    <div class="product-name">جل استحمام بزيت التين والأرغان</div>
+                </div>
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.style.display='none'">
+                    <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
+                </div>
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.style.display='none'">
+                    <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
+                </div>
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.style.display='none'">
+                    <div class="product-name">كريم تفتيح الوجه</div>
+                </div>
+                <div class="product-item" onclick="openModal(this)">
+                    <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.style.display='none'">
+                    <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
+                </div>
+            </div>
+
+            <div id="imageModal" class="modal" onclick="closeModal()">
+                <span class="modal-close">&times;</span>
+                <img class="modal-content" id="modalImg">
+            </div>
+
+            <h2 class="section-title">صوت النجاح: آراء عضوات فريقنا</h2>
+            <p class="section-subtitle">شهادات حقيقية من نساء اخترن التغيير والانضمام إلينا</p>
+
+            <div class="whatsapp-reviews-container">
+                <div class="wa-chat-bubble">
+                    <div class="wa-sender">فاطمة الزهراء (الدار البيضاء)</div>
+                    <div class="wa-text">السلام عليكم، الصراحة التكوين كان ممتاز بزاف والمواكبة كانت فالمستوى، حققت نتائج زوينة وبدأت كنربح فلوس حقيقية من أول شهر! شكراً بزاف على الدعم المستمر.</div>
+                    <div class="wa-time">10:42 م</div>
+                </div>
+
+                <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
+                    <div class="wa-sender" style="color: #7e22ce;">مريم (مراكش)</div>
+                    <div class="wa-text">أحسن قرار درتو هو أنني دخلت للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتوش معنا نهائياً لا في التكوين ولا في الشرح.</div>
+                    <div class="wa-time">11:15 م</div>
+                </div>
+
+                <div class="wa-chat-bubble">
+                    <div class="wa-sender">خديجة (أكادير)</div>
+                    <div class="wa-text">كنت مترددة فالبداية حيتاش ما عندي حتى شي خبرة، ولكن الشرح المبسط والتكوين المجاني خلاوني نبدأ بكل ثقة وثبات. فرحانة بزاف حيتاش معاكم فالفريق ❤️</div>
+                    <div class="wa-time">09:20 ص</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            <div class="faq-box">
+                <div class="faq-question">❓ هل أحتاج إلى خبرة سابقة لبدء العمل في الفريق؟</div>
+                <div class="faq-answer">لا تقلقي أبداً، فنحن نتكفل بتوفير دورة تكوينية مجانية كاملة ومتابعة مستمرة لكِ من الصفر حتى الاحتراف.</div>
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، لدي استفسار حول الحاجة إلى خبرة مسبقة للانضمام للفريق" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
+
+                <div class="faq-question">❓ كيف يمكنني الانضمام إلى الفريق وبدء العمل؟</div>
+                <div class="faq-answer">الأمر بسيط جداً، املئي الاستمارة أسفله أو تواصل معنا مباشرة عبر زر الواتساب لنرشدك للخطوات الأولى.</div>
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الانضمام إلى الفريق مع فيرونا ومعرفة الخطوات الأولى" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
+            </div>
+
+            <div class="form-card" id="register">
+                <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">سجلي طلب انضمامك إلى فريقنا</h2>
+                <p class="section-subtitle">أدخلي معلوماتك وسنتواصل معك قريباً عبر الواتساب</p>
+                
+                <form onsubmit="sendToWhatsApp(event)">
+                    <div class="input-group">
+                        <label>الاسم الكامل:</label>
+                        <input type="text" id="name" required placeholder="اكتبي اسمك الكامل هنا">
+                    </div>
+                    <div class="input-group">
+                        <label>المدينة:</label>
+                        <input type="text" id="city" required placeholder="اكتبي مدينتك">
+                    </div>
+                    <div class="input-group">
+                        <label>ملاحظة أو استفسار (اختياري):</label>
+                        <textarea id="message" placeholder="اكتبي استفسارك أو رسالتك إن وجدت..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">إرسال طلب الانضمام إلى فريقنا</button>
+                </form>
+            </div>
+
+            <div class="live-counter-box">
+                <span class="live-dot"></span>
+                <span>هناك <span id="visitorCount">0</span> شخص يتصفحون الموقع الآن</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- الصفحة الثانية: فارغة ومخصصة لتضيف فيها ما شئت لاحقاً -->
+    <div id="page2" class="page-content">
+        <div class="container" style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <h2 class="section-title">الصفحة الثانية قيد الإعداد</h2>
+            <p class="section-subtitle">أخبرنا بما ترغب في إضافته هنا، وسنقوم ببنائه لك بكل احترافية!</p>
+        </div>
+    </div>
+
+    <!-- أزرار الانتقال بين الصفحات في الأسفل -->
+    <div class="page-pagination">
+        <button id="btnPage1" class="page-btn active" onclick="switchPage(1)">1</button>
+        <button id="btnPage2" class="page-btn" onclick="switchPage(2)">2</button>
     </div>
 
     <!-- نافذة منبثقة دليلة على التفاعل -->
@@ -886,6 +945,18 @@
     </footer>
 
     <script>
+        // دالة التنقل بين الصفحات
+        function switchPage(pageNum) {
+            document.getElementById('page1').classList.remove('active-page');
+            document.getElementById('page2').classList.remove('active-page');
+            document.getElementById('btnPage1').classList.remove('active');
+            document.getElementById('btnPage2').classList.remove('active');
+
+            document.getElementById('page' + pageNum).classList.add('active-page');
+            document.getElementById('btnPage' + pageNum).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         function openModal(element) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImg");
