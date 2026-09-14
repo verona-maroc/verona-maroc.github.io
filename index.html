@@ -179,7 +179,7 @@
             padding: 0 20px;
         }
 
-        /* 🎥 قسم الفيديو الترحيبي (يوتيوب شورتس) */
+        /* 🎥 قسم الفيديو الترحيبي (نظيف وبدون خروج ليوتيوب) */
         .videos-section-title {
             text-align: center;
             margin: 10px 0 10px 0;
@@ -202,20 +202,14 @@
             box-shadow: var(--shadow-luxury);
             display: flex;
             flex-direction: column;
-            transition: 0.3s;
-            max-width: 360px;
+            max-width: 340px;
             width: 100%;
-        }
-
-        .video-card:hover {
-            border-color: var(--accent-gold);
-            transform: translateY(-5px);
         }
 
         .video-container {
             position: relative;
             width: 100%;
-            padding-top: 177.77%; /* نسبة عرض الطول لفيديوهات Shorts */
+            padding-top: 177.77%; /* نسبة الطول الفائق لفيديوهات شورتس */
             background: #000;
         }
 
@@ -228,21 +222,15 @@
             border: none;
         }
 
-        .video-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .video-info h3 {
-            color: #fff;
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .video-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        /* طبقة حماية تمنع النقر وتحويل المستخدم ليوتيوب */
+        .video-blocker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 50px); /* ترك أزرار التشغيل متاحة لكن منع الالعاب الجانبية والعنوان */
+            z-index: 5;
+            background: transparent;
         }
 
         /* إحصائيات بصرية راقية */
@@ -719,21 +707,19 @@
 
     <div class="container">
         
-        <!-- 🎥 قسم الفيديو الترحيبي (يوتيوب شورتس) -->
+        <!-- 🎥 قسم الفيديو الترحيبي (نظيف وخالي من روابط يوتيوب) -->
         <h2 class="videos-section-title" style="margin-top: 10px;">تعرفي على الفريق وفرصة العمل معنا</h2>
-        <p class="section-subtitle">شاهدي الفيديو التالي لتكتشفي كيف سنبدأ رحلة النجاح معاً</p>
+        <p class="section-subtitle">شاهدي الفيديو التوضيحي لمعرفة تفاصيل العمل</p>
 
         <div class="single-video-layout">
             <div class="video-card">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/p07nDmZr7yU" 
-                            title="فيرونا فالواقع ماشي غير فالمواقع" 
+                    <!-- تم إخفاء العنوان وأزرار الانتقال ليوتيوب عبر المعلمات البرمجية -->
+                    <iframe src="https://www.youtube.com/embed/p07nDmZr7yU?autoplay=0&controls=1&disablekb=1&modestbranding=1&rel=0&showinfo=0" 
+                            title="فيديو تعريفي" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                     </iframe>
-                </div>
-                <div class="video-info">
-                    <h3>🎬 جولة في مقر الشركة بالدار البيضاء</h3>
-                    <p>شاهدوا الواقع الحقيقي لشركة فيرونا والمنتجات عن قرب.</p>
                 </div>
             </div>
         </div>
