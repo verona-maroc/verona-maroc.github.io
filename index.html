@@ -41,7 +41,7 @@
             overflow-x: hidden;
         }
 
-        /* شريط الإعلان العلوي */
+        /* شريط الإعلان العلوي الخاص بفيرونا */
         .top-announcement-bar {
             background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
             color: #111;
@@ -451,6 +451,43 @@
             background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
         }
 
+        /* 📊 تصميم عداد الزوار وإشعارات الانضمام الوهمية */
+        .live-stats-box {
+            background: var(--surface-color);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .live-stats-box span {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* نافذة إشعار الانضمام الوهمي العائمة */
+        #fake-popup {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            background: #1c1c1c;
+            border: 1px solid var(--accent-gold);
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            z-index: 1500;
+            font-size: 0.88rem;
+            display: none;
+            max-width: 280px;
+            animation: fadeInOut 0.5s ease;
+        }
+        #fake-popup b {
+            color: var(--accent-gold);
+        }
+
         /* زر الواتساب العائم */
         .floating-wa {
             position: fixed;
@@ -486,10 +523,10 @@
 </head>
 <body>
 
-    <!-- الشريط الإعلاني العلوي -->
+    <!-- الشريط الإعلاني العلوي لفيرونا -->
     <div class="top-announcement-bar">
         <marquee behavior="scroll" direction="right" scrollamount="5">
-            ✨ عرض خاص وفوري: انضمي الآن إلى فريقي مع فيرونا المغرب واستفيدي من تكوين مجاني، هدايا قيمة، ومواكبة شخصية لتحقيق استقلالك المادي! 🚀
+            ✨ فرصة ذهبية مع فيرونا المغرب: انضمي الآن لفريقي، استفيدي من تكوين مجاني، منتجات راقية، وتحقيق دخل مالي مستقل من منزلك! 🚀
         </marquee>
     </div>
 
@@ -642,6 +679,16 @@
             </form>
         </div>
 
+        <!-- 📊 عداد الزوار الأوتوماتيكي وتنبيهات النشاط الوهمية -->
+        <div class="live-stats-box">
+            👀 الزوار الحاليون بالموقع: <span id="visitor-count">34</span> زائرة نشطة | 🌟 إجمالي المنضمات هذا الشهر: <span id="total-joined">142</span>
+        </div>
+
+    </div>
+
+    <!-- إشعار عائم وهمي لانضمام عضوة جديدة -->
+    <div id="fake-popup">
+        🔥 <span id="popup-text">سناء من فاس انضمت للتو إلى الفريق!</span>
     </div>
 
     <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقك مع فيرونا" class="floating-wa" target="_blank">
@@ -676,6 +723,46 @@
             
             window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
         }
+
+        // سكريبت العداد التلقائي والإشعارات الوهمية
+        const namesAndCities = [
+            "سناء من فاس انضمت للتو إلى الفريق!",
+            "فاطمة الزهراء من الدار البيضاء بدأت التكوين الآن!",
+            "سارة من مراكش س,جلت طلب انضمامها!",
+            "هدى من طنجة تواصلت عبر الواتساب!",
+            "كوثر من أكادير انضمت لفريق فيرونا!",
+            "إيمان من الرباط بدأت رحلة الاستقلال المالي!"
+        ];
+
+        function showFakePopup() {
+            const popup = document.getElementById('fake-popup');
+            const popupText = document.getElementById('popup-text');
+            const randomMsg = namesAndCities[Math.floor(Math.random() * namesAndCities.length)];
+            
+            popupText.innerText = randomMsg;
+            popup.style.display = 'block';
+
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 4000); // تختفي بعد 4 ثواني
+        }
+
+        // تظهر أول مرة بعد 5 ثواني، ثم تتكرر كل 12 ثانية بشكل وهمي واحترافي
+        setTimeout(() => {
+            showFakePopup();
+            setInterval(showFakePopup, 12000);
+        }, 5000);
+
+        // تحديث طفيف عشوائي لعداد الزوار ليعطي طابع الحيوية
+        setInterval(() => {
+            const visitorSpan = document.getElementById('visitor-count');
+            let current = parseInt(visitorSpan.innerText);
+            let change = Math.floor(Math.random() * 5) - 2; // يرتفع أو ينخفض قليلاً
+            let newVal = current + change;
+            if(newVal > 25 && newVal < 65) {
+                visitorSpan.innerText = newVal;
+            }
+        }, 8000);
     </script>
 
 </body>
