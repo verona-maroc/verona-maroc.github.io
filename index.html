@@ -14,7 +14,6 @@
 
     <style>
         :root {
-            --bg-color: #fcfbfe;
             --surface-card: #ffffff;
             --text-main: #2b2633;
             --text-muted: #6b637a;
@@ -32,7 +31,12 @@
             font-family: 'Tajawal', sans-serif;
         }
 
-        /* الخلفية المتدرجة الفاخرة والمتحركة بسلاسة */
+        /* القواعد الصارمة للخلفية المتحركة والمتدرجة */
+        html {
+            min-height: 100%;
+            background: linear-gradient(135deg, #fcfbfe 0%, #f3e8ff 50%, #fcfbfe 100%) !important;
+        }
+
         body {
             background: linear-gradient(135deg, #fcfbfe 0%, #f3e8ff 50%, #fcfbfe 100%) !important;
             background-size: 400% 400% !important;
@@ -45,14 +49,12 @@
             overflow-x: hidden;
         }
 
-        /* حركة التدرج الهادئة في الخلفية */
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* شريط إعلاني متحرك فاخر */
         .announcement-bar {
             background: linear-gradient(90deg, #f3e8ff, #fae8ff, #f3e8ff);
             color: var(--accent-gold);
@@ -81,9 +83,9 @@
             100% { transform: translateX(100%); }
         }
 
-        /* هيدر ملكي أنيق بدون صورة خلفية */
         header {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             color: var(--text-main);
             padding: 45px 20px;
             text-align: center;
@@ -210,7 +212,8 @@
         }
 
         .stat-box {
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
             padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
@@ -263,7 +266,8 @@
         }
 
         .feature-card {
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
             padding: 35px 30px;
             border-radius: 16px;
             box-shadow: var(--shadow-luxury);
@@ -275,7 +279,7 @@
         .feature-card:hover {
             border-color: var(--accent-gold);
             transform: translateY(-7px);
-            background: #faf5ff;
+            background: rgba(250, 245, 255, 0.95);
         }
 
         .feature-icon {
@@ -304,7 +308,7 @@
         }
 
         .product-item {
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow-luxury);
@@ -386,7 +390,8 @@
             gap: 18px;
             max-width: 750px;
             margin: 0 auto 60px auto;
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
             padding: 35px 25px;
             border-radius: 20px;
             border: 1px solid var(--border-gold);
@@ -424,7 +429,8 @@
         }
 
         .faq-box {
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
             padding: 40px;
             border-radius: 16px;
             box-shadow: var(--shadow-luxury);
@@ -466,7 +472,8 @@
         }
 
         .form-card {
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
             padding: 45px;
             border-radius: 20px;
             box-shadow: var(--shadow-luxury);
@@ -524,7 +531,8 @@
         }
 
         .live-counter-box {
-            background: var(--surface-card);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
             max-width: 340px;
             margin: 0 auto 30px auto;
             padding: 14px 25px;
@@ -542,7 +550,7 @@
         }
 
         .live-dot {
-            width: 10px;
+            width: 100%;
             height: 10px;
             background-color: #25d366;
             border-radius: 50%;
@@ -634,7 +642,8 @@
         footer {
             text-align: center;
             padding: 30px;
-            background: #f3f0f7;
+            background: rgba(243, 240, 247, 0.85);
+            backdrop-filter: blur(5px);
             color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-gold);
