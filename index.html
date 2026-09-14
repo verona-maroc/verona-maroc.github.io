@@ -76,7 +76,6 @@
             100% { transform: translateX(100%); }
         }
 
-        /* شريط المقاعد المحدودة والتنبيه بدون عداد زمني */
         .limited-seats-bar {
             background: linear-gradient(135deg, #7e22ce, #9333ea);
             color: #ffffff;
@@ -629,7 +628,6 @@
             font-size: 0.9rem;
         }
 
-        /* أزرار التواصل العائمة المتطابقة تماماً (واتساب + اتصال هاتفي) */
         .floating-buttons-container {
             position: fixed;
             bottom: 25px;
@@ -660,7 +658,6 @@
             transform: scale(1.12);
         }
 
-        /* تنسيق أزرار التنقل بين الصفحات في الأسفل */
         .page-pagination {
             display: flex;
             justify-content: center;
@@ -693,13 +690,82 @@
             border-color: var(--accent-gold);
         }
 
-        /* حاوية الصفحات (لإظهار وإخفاء المحتوى بسلاسة) */
         .page-content {
             display: none;
         }
 
         .page-content.active-page {
             display: block;
+        }
+
+        /* تنسيقات إضافية خاصة بمحتوى الصفحة الثانية المطور للاستقطاب */
+        .story-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .story-box h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .story-box p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 30px 25px;
+            border-radius: 16px;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
+            text-align: center;
+        }
+
+        .step-num-badge {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+        }
+
+        .step-card h3 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
         footer {
@@ -715,9 +781,8 @@
 </head>
 <body>
 
-    <!-- الصفحة الأولى: المحتوى الأصلي بالكامل بدون أي نقصان -->
+    <!-- الصفحة الأولى: المحتوى الأصلي بالكامل -->
     <div id="page1" class="page-content active-page">
-        <!-- شريط الترحيب المتحرك -->
         <div class="announcement-bar">
             <div class="marquee-content">
                 <span>✨ انضمي إلى فريقنا الخاص في شركة فيرونا واحصلي على تدريب حصري ودخل متميز من منزلك</span>
@@ -727,7 +792,6 @@
             </div>
         </div>
 
-        <!-- شريط المقاعد المحدودة (بدون عداد وقت) -->
         <div class="limited-seats-bar">
             ⚡ مقاعد محدودة لدورة هذا الشهر - سارع (ي) بالتسجيل!
         </div>
@@ -907,11 +971,77 @@
         </div>
     </div>
 
-    <!-- الصفحة الثانية: فارغة ومخصصة لتضيف فيها ما شئت لاحقاً -->
+    <!-- الصفحة الثانية: رحلة إقناع متكاملة مخصصة لاستقطاب ربات البيوت والمشتغلات من المنزل -->
     <div id="page2" class="page-content">
-        <div class="container" style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-            <h2 class="section-title">الصفحة الثانية قيد الإعداد</h2>
-            <p class="section-subtitle">أخبرنا بما ترغب في إضافته هنا، وسنقوم ببنائه لك بكل احترافية!</p>
+        <div class="container">
+            
+            <h2 class="section-title" style="margin-top: 20px;">دليلك الشامل لتحقيق الاستقلال المالي من منزلك</h2>
+            <p class="section-subtitle">كيف تنجحين معنا في فريق فيرونا حتى لو كنتِ تبدئين من الصفر تماماً؟</p>
+
+            <!-- 1. قسم قصص النجاح الملهمة -->
+            <h3 style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 20px; text-align: center;">🌟 قصص ملهمة من نساء ثقن في أنفسهن وبدأن معنا</h3>
+            
+            <div class="story-box">
+                <h3>قصة أم يحيى (ربة بيت من مدينة فاس)</h3>
+                <p>"كنت قضيت سنوات طويلة محصورة بين أعباء البيت وتربية الأطفال، ولم أكن أتخيل أنني قادرة على تحقيق مدخول خاص بي دون مغادرة منزلي. بفضل انضمامي لفريق فيرونا، وجدت التوجيه الصحيح والشرح البسيط، واليوم ولله الحمد أعمل براحة تامة من هاتفي وأنا بجانب أبنائي وأحقق أرباحاً متميزة تعزز استقلاليتي المالية."</p>
+            </div>
+
+            <div class="story-box">
+                <h3>قصة لطيفة (طالبة جامعية من مراكش)</h3>
+                <p>"كنت أبحث عن عمل مرن يناسب أوقات دراستي ولا يتعارض معها. مع فريق فيرونا، وجدت المرونة المطلوبة والدعم المستمر من الفريق. لم أكن أحمل أي خبرة في المبيعات، لكن التدريب المجاني خطوة بخطوة غير كل شيء وجعلني واثقة من نفسي."</p>
+            </div>
+
+            <!-- 2. قسم "ماذا ستستفيدين معنا؟" -->
+            <h2 class="section-title">ما الذي ستحصلين عليه فور انضمامك إلينا؟</h2>
+            <p class="section-subtitle">كل ما تحتاجينه للنجاح متوفر وميسر خصيصاً لكِ</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>الحرية والعمل من البيت</h3>
+                    <p>لا أوقات عمل صارمة ولا تنقلات متعبة، اعملي من هاتفك المحمول في الوقت الذي يناسب جدولك العائلي.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>امتيازات وهدايا حصرية</h3>
+                    <p>استفيدي من منتجات فيرونا الراقيّة بخصومات تفضيلية تكفل لكِ أعلى هامش ربح ممكن.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>مجتمع نسائي داعم</h3>
+                    <p>ستكونين جزءاً من عائلة نسائية متضامنة تشجعك، تدعمك، وتفرح بنجاحك في كل خطوة.</p>
+                </div>
+            </div>
+
+            <!-- 3. قسم "كيف تبدئين معنا في 3 خطوات بسيطة؟" -->
+            <h2 class="section-title">كيف تبدئين رحلتك معنا اليوم؟</h2>
+            <p class="section-subtitle">الأمر أبسط مما تتخيلين، فقط 3 خطوات تفصلك عن بدايتك الحقيقية</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num-badge">1</div>
+                    <h3>التواصل الأولي</h3>
+                    <p>اضغطي على زر الواتساب أسفله لتسجيل اهتمامك والتحدث معنا بشكل مباشر ومبسط.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num-badge">2</div>
+                    <h3>التكوين والتوجيه</h3>
+                    <p>نمنحك الدورة التكوينية المجانية وكل الأسرار والنصائح للبدء بكل ثقة واطمئنان.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num-badge">3</div>
+                    <h3>انطلاق الأرباح</h3>
+                    <p>تبدئين بالعمل وتحقيق أرباحك الأولى بينما نحن نرافقك وندعمك في كل خطوة.</p>
+                </div>
+            </div>
+
+            <!-- زر تفاعلي قوي للتوجه نحو الواتساب مباشرة من الصفحة الثانية -->
+            <div style="text-align: center; margin: 40px 0 20px 0;">
+                <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قرأت تفاصيل الصفحة الثانية وأرغب في الانضمام إلى الفريق وبدء رحلتي من البيت" class="btn-main" style="font-size: 1.1rem; padding: 15px 40px;" target="_blank">
+                    💬 تواصلي معنا عبر الواتساب وابدئي الآن
+                </a>
+            </div>
+
         </div>
     </div>
 
@@ -921,16 +1051,14 @@
         <button id="btnPage2" class="page-btn" onclick="switchPage(2)">2</button>
     </div>
 
-    <!-- نافذة منبثقة دليلة على التفاعل -->
     <div id="socialProof" class="social-proof-popup">
         <div class="popup-icon">✨</div>
         <div class="popup-text">
-            <strong id="proofName">فاطمة من الدار البيضاء</strong>
+            <strong id="proofName">فاطمة الزهراء من الدار البيضاء</strong>
             <span>انضمت للتو إلى فريق فيرونا 🚀</span>
         </div>
     </div>
 
-    <!-- أزرار التواصل العائمة المطابقة تماماً -->
     <div class="floating-buttons-container">
         <a href="tel:+212618283321" class="floating-call" title="اتصال هاتفي مباشر">
             📞
@@ -945,7 +1073,6 @@
     </footer>
 
     <script>
-        // دالة التنقل بين الصفحات
         function switchPage(pageNum) {
             document.getElementById('page1').classList.remove('active-page');
             document.getElementById('page2').classList.remove('active-page');
@@ -969,7 +1096,6 @@
             document.getElementById("imageModal").style.display = "none";
         }
 
-        // عداد الزوار الحي
         function startVisitorCounter() {
             const counterElement = document.getElementById("visitorCount");
             let currentCount = 0; 
@@ -997,7 +1123,6 @@
         }
         startVisitorCounter();
 
-        // إشعارات انضمام الأعضاء
         const proofList = [
             { name: "فاطمة الزهراء", city: "الدار البيضاء" },
             { name: "مريم", city: "مراكش" },
@@ -1027,7 +1152,6 @@
             setInterval(showSocialProof, 12000);
         }, 5000);
 
-        // إرسال معلومات الاستمارة للواتساب
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
