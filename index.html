@@ -41,14 +41,14 @@
             overflow-x: hidden;
         }
 
-        /* الشريط الإعلاني المتحرك باستمرار بدون توقف */
+        /* الشريط الإعلاني الأصفر المتحرك من اليسار لليمين بدون توقف */
         .top-announcement-bar {
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
             color: #111;
-            padding: 10px 0;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            padding: 12px 0;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 3px 15px rgba(212, 175, 55, 0.3);
             position: relative;
             z-index: 1000;
             overflow: hidden;
@@ -58,19 +58,19 @@
         .ticker-wrap {
             display: inline-block;
             white-space: nowrap;
-            animation: tickerAnimation 25s linear infinite;
+            animation: tickerAnimation 22s linear infinite;
         }
 
         .ticker-wrap span {
-            margin-left: 50px;
+            margin-left: 60px;
         }
 
         @keyframes tickerAnimation {
             0% {
-                transform: translateX(100%);
+                transform: translateX(-100%);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(100%);
             }
         }
 
@@ -537,7 +537,7 @@
 </head>
 <body>
 
-    <!-- الشريط الإعلاني المتحرك باستمرار بدون توقف -->
+    <!-- الشريط الإعلاني الأصفر المتحرك من اليسار لليمين بدون توقف -->
     <div class="top-announcement-bar">
         <div class="ticker-wrap">
             <span>✨ عرض خاص لفريق فيرونا المغرب: انضمي الآن واستفيدي من تكوين مجاني ودخل مالي مستقل من منزلك! 🚀</span>
