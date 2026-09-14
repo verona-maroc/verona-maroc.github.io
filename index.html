@@ -76,28 +76,16 @@
             100% { transform: translateX(100%); }
         }
 
-        /* شريط العد التنازلي والمقاعد المحدودة */
+        /* شريط المقاعد المحدودة والتنبيه بدون عداد زمني */
         .limited-seats-bar {
             background: linear-gradient(135deg, #7e22ce, #9333ea);
             color: #ffffff;
             text-align: center;
             padding: 12px 15px;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             font-weight: 700;
             box-shadow: inset 0 -2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .limited-seats-bar span.highlight-timer {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         header {
@@ -641,7 +629,7 @@
             font-size: 0.9rem;
         }
 
-        /* أزرار التواصل العائمة (واتساب + اتصال هاتفي) */
+        /* أزرار التواصل العائمة المتطابقة تماماً (واتساب + اتصال هاتفي) */
         .floating-buttons-container {
             position: fixed;
             bottom: 25px;
@@ -660,22 +648,12 @@
             align-items: center;
             justify-content: center;
             font-size: 26px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
             text-decoration: none;
             transition: 0.3s;
             border: 2px solid rgba(255,255,255,0.9);
-        }
-
-        .floating-wa {
             background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        .floating-call {
-            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
-            color: white;
-            box-shadow: 0 6px 20px rgba(147, 51, 234, 0.4);
         }
 
         .floating-wa:hover, .floating-call:hover {
@@ -705,10 +683,9 @@
         </div>
     </div>
 
-    <!-- شريط المقاعد المحدودة والتنبيه -->
+    <!-- شريط المقاعد المحدودة (بدون عداد وقت) -->
     <div class="limited-seats-bar">
-        <span>⚡ مقاعد محدودة لدورة هذا الشهر - سارع (ي) بالتسجيل!</span>
-        <span class="highlight-timer" id="countdownTimer">02 أيام : 14 ساعة : 32 دقيقة</span>
+        ⚡ مقاعد محدودة لدورة هذا الشهر - سارع (ي) بالتسجيل!
     </div>
 
     <header>
@@ -894,7 +871,7 @@
         </div>
     </div>
 
-    <!-- أزرار التواصل السريع العائمة (اتصال هاتفي + واتساب) -->
+    <!-- أزرار التواصل العائمة المطابقة تماماً -->
     <div class="floating-buttons-container">
         <a href="tel:+212618283321" class="floating-call" title="اتصال هاتفي مباشر">
             📞
@@ -948,20 +925,6 @@
             }
         }
         startVisitorCounter();
-
-        // عداد تنازلي وهمي ديناميكي للحماس
-        function startTimer() {
-            let hours = 14, minutes = 32, seconds = 45;
-            const timerEl = document.getElementById("countdownTimer");
-            setInterval(() => {
-                seconds--;
-                if(seconds < 0) { seconds = 59; minutes--; }
-                if(minutes < 0) { minutes = 59; hours--; }
-                if(hours < 0) { hours = 2; }
-                timerEl.textContent = `02 أيام : ${String(hours).padStart(2,'0')} ساعة : ${String(minutes).padStart(2,'0')} دقيقة`;
-            }, 1000);
-        }
-        startTimer();
 
         // إشعارات انضمام الأعضاء
         const proofList = [
