@@ -330,7 +330,6 @@
             line-height: 1.6;
         }
 
-        /* جدول المقارنة باللغة العربية الفصحى */
         .comparison-table-wrapper {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
@@ -620,7 +619,6 @@
             transform: translateY(-2px);
         }
 
-        /* شارات الأمان والثقة (Trust Badges) */
         .trust-badges-container {
             display: flex;
             justify-content: center;
@@ -921,7 +919,6 @@
             border-top: 1px solid var(--border-gold);
         }
 
-        /* --- تنسيقات الإضافة الجديدة للتفاعل البصري والتموج (Micro-interactions) --- */
         .interactive-btn {
             position: relative;
             overflow: hidden;
@@ -950,7 +947,6 @@
                 opacity: 0;
             }
         }
-        /* تصميم رسالة التنبيه العائمة الهادئة (Toast Notification) */
         #custom-toast {
             position: fixed;
             bottom: -100px;
@@ -997,14 +993,13 @@
                 </video>
             </div>
 
+            <!-- تم تعديل الشارة هنا لتصبح "انضمي إلى نخبة فريقنا هذا الشهر" فقط -->
             <div class="badge-alert">✦ انضمي إلى نخبة فريقنا هذا الشهر ✦</div>
             <h1>انضمي إلى فريقنا مع فيرونا</h1>
             <h2>VERONA PRODUCTS PROFESSIONAL</h2>
             <p>معكِ في كل خطوة لتحقيق استقلالك المادي، العمل المرن، والجمال الراقي بدون أي خبرة مسبقة.</p>
-            <!-- أضفنا كلاس interactive-btn هنا للزر الرئيسي -->
             <a href="#register" class="btn-main interactive-btn" onclick="showToast('مرحباً بكِ! اختاري طريقة التسجيل أسفله ✨')">انضمي لفريقنا الآن</a>
 
-            <!-- شارات الثقة تحت الزر الرئيسي -->
             <div class="trust-badges-container" style="max-width: 650px; margin: 20px auto 0 auto;">
                 <div class="trust-badge-item"><span>🔒</span> تسجيل آمن 100%</div>
                 <div class="trust-badge-item"><span>🛡️</span> بدون التزامات مالية مسبقة</div>
@@ -1071,7 +1066,6 @@
                 </div>
             </div>
 
-            <!-- جدول المقارنة باللغة العربية الفصحى -->
             <h2 class="section-title">مقارنة بين الوظيفة التقليدية والعمل الحر مع فيرونا</h2>
             <p class="section-subtitle">اكتشفي الفرق الحقيقي بين مشقة التنقل وساعات العمل الطويلة، وبين مرونة وحرية العمل من منزلك</p>
             
@@ -1186,7 +1180,6 @@
                 </div>
             </div>
 
-            <!-- زر مشاركة الصفحة مباشرة عبر الواتساب أو وسائل التواصل -->
             <div class="share-section">
                 <h3 style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 8px;">عجبتك الفرصة؟ شاركيها مع صديقاتك! 💫</h3>
                 <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">ساهمي في نشر الخير ومساعدة نساء أخريات لتحقيق استقلالهن المالي</p>
@@ -1233,7 +1226,6 @@
                     </div>
                     <button type="submit" class="submit-btn interactive-btn">إرسال طلب الانضمام إلى فريقنا</button>
 
-                    <!-- شارات الثقة والأمان أسفل نموذج التسجيل -->
                     <div class="trust-badges-container" style="margin-top: 15px;">
                         <div class="trust-badge-item"><span>🔒</span> بياناتك آمنة ومحمية</div>
                         <div class="trust-badge-item"><span>🛡️</span> بدون التزامات مسبقة</div>
@@ -1324,7 +1316,6 @@
                 <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قريت قصص النجاح فالموقع وبغيت حتى أنا ندخل للفريق ونبدأ من داري" class="page2-whatsapp-btn interactive-btn" target="_blank" onclick="showToast('جاري فتح الواتساب للتواصل المباشر 📱')">
                     💬 تواصل معنا فواتساب وابدئي دابا
                 </a>
-                <!-- شارات الثقة تحت زر الصفحة الثانية -->
                 <div class="trust-badges-container" style="max-width: 550px; margin: 20px auto 0 auto;">
                     <div class="trust-badge-item"><span>🔒</span> تواصل آمن ومباشر</div>
                     <div class="trust-badge-item"><span>🛡️</span> بدون أي التزامات مسبقة</div>
@@ -1361,7 +1352,6 @@
     </footer>
 
     <script>
-        // إعداد عنصر التنبيه العائم (Toast Notification) وتأثيرات التموج للأزرار
         document.addEventListener('DOMContentLoaded', function() {
             const toast = document.createElement('div');
             toast.id = 'custom-toast';
