@@ -331,6 +331,67 @@
             line-height: 1.6;
         }
 
+        /* تنسيق جدول المقارنة الاحترافي */
+        .comparison-table-wrapper {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border-gold);
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #f3e8ff, #fae8ff);
+            color: var(--accent-gold-dark);
+            font-weight: 800;
+            font-size: 1.05rem;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(250, 245, 255, 0.5);
+        }
+
+        .comparison-feature {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .bad-point {
+            color: #d97706;
+            font-weight: 600;
+        }
+
+        .good-point {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        /* نجوم التقييم */
+        .stars-rating {
+            color: #f59e0b;
+            font-size: 1.1rem;
+            margin: 6px 0 10px 0;
+            letter-spacing: 2px;
+        }
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -346,6 +407,7 @@
             border: 1px solid var(--border-gold);
             cursor: pointer;
             transition: all 0.4s ease;
+            text-align: center;
         }
 
         .product-item:hover {
@@ -366,8 +428,7 @@
         }
 
         .product-name {
-            padding: 18px;
-            text-align: center;
+            padding: 14px 18px 4px 18px;
             font-weight: 700;
             color: var(--text-main);
             font-size: 0.98rem;
@@ -559,6 +620,49 @@
         .submit-btn:hover {
             background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
             transform: translateY(-2px);
+        }
+
+        /* زر مشاركة الصفحة السريع */
+        .share-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-gold);
+            box-shadow: var(--shadow-luxury);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .share-buttons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: 0.3s;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .share-wa { background: #25d366; }
+        .share-fb { background: #1877f2; }
+        .share-copy { background: var(--accent-gold); }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
         }
 
         .live-counter-box {
@@ -883,6 +987,49 @@
                 </div>
             </div>
 
+            <!-- جدول المقارنة بين العمل الحر مع فيرونا والوظيفة التقليدية -->
+            <h2 class="section-title">مقارنة بين الوظيفة التقليدية والعمل الحر مع فيرونا</h2>
+            <p class="section-subtitle">اكتشفي الفرق الحقيقي بين وجع راس التنقل والساعات الطويلة، وبين مرونة وحرية العمل من منزلك</p>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>وجه المقارنة</th>
+                            <th>الوظيفة التقليدية 🏢</th>
+                            <th>العمل الحر مع فيرونا ✨</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="comparison-feature">مقر العمل والراحة</td>
+                            <td><span class="bad-point">التنقل اليومي ووجع راس الطريق</span></td>
+                            <td><span class="good-point">راحة الدار وبدون تنقل</span></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-feature">ساعات العمل</td>
+                            <td><span class="bad-point">ساعات طويلة ومقيدة (تصل لـ 8-10 ساعات)</span></td>
+                            <td><span class="good-point">ساعات مرنة تختاريها بنفسك</span></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-feature">الدخل والأرباح</td>
+                            <td><span class="bad-point">راتب محدود وثابت مهما زاد جهودك</span></td>
+                            <td><span class="good-point">أرباح غير محدودة مرتبطة بمجهودك</span></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-feature">الخبرة المطلوبة</td>
+                            <td><span class="bad-point">تشترط شهادات وخبرة طويلة مسبقة</span></td>
+                            <td><span class="good-point">لا تشترط أي خبرة (تكوین مجاني بالكامل)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-feature">المواكبة والدعم</td>
+                            <td><span class="bad-point">ضغط نفسي ومسؤولية فردية</span></td>
+                            <td><span class="good-point">دعم ومواكبة شخصية مستمرة من الفريق</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
             <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
             
@@ -890,30 +1037,37 @@
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.style.display='none'">
                     <div class="product-name">لوشن لتفتيح الجسم</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.style.display='none'">
                     <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.style.display='none'">
                     <div class="product-name">جل استحمام بزيت التين والأرغان</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.style.display='none'">
                     <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.style.display='none'">
                     <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.style.display='none'">
                     <div class="product-name">كريم تفتيح الوجه</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="product-item" onclick="openModal(this)">
                     <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.style.display='none'">
                     <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
+                    <div class="stars-rating">⭐⭐⭐⭐⭐</div>
                 </div>
             </div>
 
@@ -929,19 +1083,39 @@
                 <div class="wa-chat-bubble">
                     <div class="wa-sender">فاطمة الزهراء (الدار البيضاء)</div>
                     <div class="wa-text">السلام عليكم، الصراحة التكوين كان ممتاز بزاف والمواكبة كانت فالمستوى، حققت نتائج زوينة وبدأت كنربح فلوس حقيقية من أول شهر! شكراً بزاف على الدعم المستمر.</div>
+                    <div class="stars-rating" style="font-size: 0.9rem; margin: 4px 0 2px 0;">⭐⭐⭐⭐⭐</div>
                     <div class="wa-time">10:42 م</div>
                 </div>
 
                 <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
                     <div class="wa-sender" style="color: #7e22ce;">مريم (مراكش)</div>
                     <div class="wa-text">أحسن قرار درتو هو أنني دخلت للفريق، الخدمة مرتاحة فيها من التليفون، والأرباح واضحة وما قصرتوش معنا نهائياً لا في التكوين ولا في الشرح.</div>
+                    <div class="stars-rating" style="font-size: 0.9rem; margin: 4px 0 2px 0;">⭐⭐⭐⭐⭐</div>
                     <div class="wa-time">11:15 م</div>
                 </div>
 
                 <div class="wa-chat-bubble">
                     <div class="wa-sender">خديجة (أكادير)</div>
                     <div class="wa-text">كنت مترددة فالبداية حيتاش ما عندي حتى شي خبرة، ولكن الشرح المبسط والتكوين المجاني خلاوني نبدأ بكل ثقة وثبات. فرحانة بزاف حيتاش معاكم فالفريق ❤️</div>
+                    <div class="stars-rating" style="font-size: 0.9rem; margin: 4px 0 2px 0;">⭐⭐⭐⭐⭐</div>
                     <div class="wa-time">09:20 ص</div>
+                </div>
+            </div>
+
+            <!-- زر مشاركة الصفحة مباشرة عبر الواتساب أو وسائل التواصل -->
+            <div class="share-section">
+                <h3 style="color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 8px;">عجبتك الفرصة؟ شاركيها مع صديقاتك! 💫</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">ساهمي في نشر الخير ومساعدة نساء أخريات لتحقيق استقلالهن المالي</p>
+                <div class="share-buttons-grid">
+                    <a href="https://api.whatsapp.com/send?text=اكتشفي فرصة العمل الحر مع فيرونا وحققي استقلالك المادي من منزلك:%20https://verona-maroc.github.io/" target="_blank" class="share-btn share-wa">
+                        💬 شاركي عبر واتساب
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://verona-maroc.github.io/" target="_blank" class="share-btn share-fb">
+                        f شاركي عبر فيسبوك
+                    </a>
+                    <button onclick="copyPageLink()" class="share-btn share-copy" style="border: none; cursor: pointer;">
+                        🔗 نسخ رابط الموقع
+                    </button>
                 </div>
             </div>
 
@@ -997,6 +1171,7 @@
                 <div class="wa-chat-bubble">
                     <div class="wa-sender">أم يحيى - فاس 🏡</div>
                     <div class="wa-text">"سلام البنات، بغيت نشارك معكم تجربتي باش تستافدو.. أنا كنت غير مقابلة الدار ولولاد، وكنت كنقول مستحيل ندخل مدخول بوحدي بلا ما نخرج للخدمة برى. النهار لي دخلت لفريق فيرونا تبدلات حياتي! لقيت التوجيه الصحيح والشرح لي ساهل بزاف. دابا كنخدم غير من تيليفوني وأنا جالسة مع وليداتي، وكنصور الحمد لله أرباح زوينة حسنات ليا مستوايا المادي. لي مزال مترددة كنقولها زعمي وماتندميش! ❤️"</div>
+                    <div class="stars-rating" style="font-size: 0.9rem; margin: 4px 0 2px 0;">⭐⭐⭐⭐⭐</div>
                     <div class="wa-time">02:30 م ✓✓</div>
                 </div>
 
@@ -1006,6 +1181,7 @@
                 <div class="wa-chat-bubble" style="margin-right: auto; border-radius: 16px 0 16px 16px; border-right: none; border-left: 3px solid #25d366; background: #f3e8ff;">
                     <div class="wa-sender" style="color: #7e22ce;">لطيفة - مراكش 🌸</div>
                     <div class="wa-text">"أنا طالبة من مراكش، كنت محتاجة نخدم باش نخلص مصاريفي ولكن الوقت ديال القراية ما كيسمحش ليا.. منين دخلت مع الفريق لقيت مرونة كبيرة بزاف، والتكوين المجاني علمنا كلشي من الصفر واخا ما كانت عندي حتى شي خبرة فالمبيعات. صراحة أحسن خطوة درتها فحياني هي انضمامي لفيرونا! 🚀"</div>
+                    <div class="stars-rating" style="font-size: 0.9rem; margin: 4px 0 2px 0;">⭐⭐⭐⭐⭐</div>
                     <div class="wa-time">06:15 م ✓✓</div>
                 </div>
 
@@ -1110,6 +1286,12 @@
 
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
+        }
+
+        function copyPageLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert("✨ تم نسخ رابط الموقع بنجاح! يمكنك مشاركته الآن.");
+            });
         }
 
         function startVisitorCounter() {
