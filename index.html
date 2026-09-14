@@ -7,7 +7,6 @@
 
     <meta property="og:title" content="انضمي إلى فريقنا مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
     <meta property="og:description" content="كوني جزءاً من فريقنا الناجح مع فيرونا، تدريب راقٍ، ودخل متميز من منزلك.">
-    <meta property="og:image" content="logo1.png">
     <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -31,7 +30,6 @@
             font-family: 'Tajawal', sans-serif;
         }
 
-        /* خلفية عامة ناعمة للصفحة */
         body {
             background: linear-gradient(135deg, #fcfbfe 0%, #f3e8ff 50%, #fcfbfe 100%);
             color: var(--text-main);
@@ -41,7 +39,6 @@
             overflow-x: hidden;
         }
 
-        /* شريط إعلاني متحرك فاخر */
         .announcement-bar {
             background: linear-gradient(90deg, #f3e8ff, #fae8ff, #f3e8ff);
             color: var(--accent-gold);
@@ -80,24 +77,24 @@
             position: relative;
         }
 
-        /* حاوية اللوغو مع خلفية الفيديو */
+        /* حاوية الفيديو الدائرية (تمت ازالة صورة اللوغو وجعل الفيديو يملأ الدائرة بالكامل) */
         .logo-container {
             position: relative;
             z-index: 2;
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             margin: 0 auto 15px auto;
             border-radius: 50%;
-            overflow: hidden; /* لقص الفيديو على شكل دائرة خلف اللوغو */
+            overflow: hidden;
             border: 3px solid var(--accent-gold);
-            box-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
-            background-color: #ffffff;
+            box-shadow: 0 0 25px rgba(147, 51, 234, 0.3);
+            background-color: #000;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* فيديو خلفية اللوغو */
+        /* الفيديو داخل الدائرة */
         .logo-bg-video {
             position: absolute;
             top: 0;
@@ -106,29 +103,6 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
-            opacity: 0.65; /* شفافة لكي يظهر اللوغو بوضوح فوقها */
-        }
-
-        /* طبقة شفافة أو لون فوق الفيديو خلف اللوغو إن أردت تحكم أكثر بالوضوح */
-        .logo-video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.25);
-            z-index: 2;
-        }
-
-        /* اللوغو نفسه (الصورة) يوضع فوق الفيديو */
-        .logo-container img {
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            object-fit: contain;
-            position: relative;
-            z-index: 3;
-            background: transparent;
         }
 
         header h1, header h2, header p, .badge-alert, .btn-main {
@@ -683,13 +657,11 @@
     </div>
 
     <header>
-        <!-- حاوية اللوغو التي تحتوي على الفيديو في الخلفية -->
+        <!-- الدائرة يظهر فيها الفيديو وحده الآن بدون صورة لوغو -->
         <div class="logo-container">
             <video autoplay muted loop playsinline class="logo-bg-video">
                 <source src="video1.mp4" type="video/mp4">
             </video>
-            <div class="logo-video-overlay"></div>
-            <img src="logo1.png" alt="Verona Logo">
         </div>
 
         <div class="badge-alert">✦ انضمي إلى نخبة فريقنا هذا الشهر ✦</div>
@@ -763,31 +735,31 @@
         
         <div class="products-grid">
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.src='logo1.png'">
+                <img src="1000561739.jpg" alt="لوشن لتفتيح الجسم" onerror="this.style.display='none'">
                 <div class="product-name">لوشن لتفتيح الجسم</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.src='logo1.png'">
+                <img src="1000561740.jpg" alt="جل استحمام بعسل المانوكا" onerror="this.style.display='none'">
                 <div class="product-name">جل استحمام بعسل المانوكا وزيت الزيتون</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.src='logo1.png'">
+                <img src="1000561741.jpg" alt="جل استحمام بزيت التين والأرغان" onerror="this.style.display='none'">
                 <div class="product-name">جل استحمام بزيت التين والأرغان</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.src='logo1.png'">
+                <img src="1000561742.jpg" alt="شامبو بزيت الأفوكادو والبيوتين" onerror="this.style.display='none'">
                 <div class="product-name">شامبو بزيت الأفوكادو والبيوتين</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.src='logo1.png'">
+                <img src="1000561743.jpg" alt="سيروم التفتيح المكثف" onerror="this.style.display='none'">
                 <div class="product-name">سيروم التفتيح المكثف للوجه والرقبة</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.src='logo1.png'">
+                <img src="1000561744.jpg" alt="كريم تفتيح الوجه" onerror="this.style.display='none'">
                 <div class="product-name">كريم تفتيح الوجه</div>
             </div>
             <div class="product-item" onclick="openModal(this)">
-                <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.src='logo1.png'">
+                <img src="1000561745.jpg" alt="معجون العناية بالقدمين" onerror="this.style.display='none'">
                 <div class="product-name">معجون العناية بالقدمين ومحاربة الفطريات</div>
             </div>
         </div>
