@@ -50,7 +50,7 @@
             overflow-x: hidden;
         }
 
-        /* تأثير نبضات القلب (Pulse Animation) لأزرار الواتساب */
+        /* تأثير نبضات القلب (Pulse Animation) للأزرار الخضراء */
         @keyframes whatsappPulse {
             0% {
                 transform: scale(1);
@@ -63,22 +63,6 @@
             100% {
                 transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* تأثير نبض خاص بالزر الأزرق للاتصال */
-        @keyframes callPulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             }
         }
 
@@ -683,22 +667,10 @@
             text-decoration: none;
             transition: 0.3s;
             border: 2px solid rgba(255,255,255,0.9);
-        }
-
-        /* تطبيق نبضات القلب المستمرة على زر الواتساب الأخضر */
-        .floating-wa {
             background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
             color: white;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             animation: whatsappPulse 2s infinite;
-        }
-
-        /* تطبيق نبضات مستمرة على زر الاتصال الأزرق باش يتناغم مع زر الواتساب */
-        .floating-call {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: white;
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-            animation: callPulse 2s infinite;
         }
 
         .floating-wa:hover, .floating-call:hover {
