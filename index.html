@@ -73,7 +73,7 @@
             100% { transform: translateX(100%); }
         }
 
-        /* هيدر ملكي بخلفية خفيفة جداً مع الشعار بخلفية بيضاء نقية */
+        /* هيدر ملكي مع خلفية بيضاء نقية للوغو */
         header {
             background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(10,10,10,0.65)), url('logo1.png');
             background-size: cover;
@@ -104,7 +104,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: contain;
-            background-color: #ffffff; /* تم تغيير خلفية اللوغو إلى الأبيض الناصع */
+            background-color: #ffffff;
             border: 3px solid var(--accent-gold);
             box-shadow: 0 0 35px rgba(223, 183, 119, 0.3);
             margin-bottom: 20px;
@@ -541,6 +541,57 @@
             100% { opacity: 0.3; }
         }
 
+        /* 🚀 (النقطة 6) إشعارات الثقة الحية التفاعلية أسفل الشاشة */
+        .social-proof-popup {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: rgba(28, 28, 28, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
+            padding: 12px 18px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 310px;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.5);
+        }
+
+        .social-proof-popup.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .popup-icon {
+            font-size: 24px;
+            background: rgba(223, 183, 119, 0.15);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--border-gold);
+            flex-shrink: 0;
+        }
+
+        .popup-text {
+            font-size: 0.85rem;
+            color: #e5e5e5;
+            line-height: 1.4;
+        }
+
+        .popup-text strong {
+            color: var(--accent-gold);
+            display: block;
+            font-size: 0.9rem;
+        }
+
         /* زر الواتساب العائم الفاخر */
         .floating-wa {
             position: fixed;
@@ -757,6 +808,15 @@
 
     </div>
 
+    <!-- نافذة إشعارات الثقة الحية (النقطة 6) -->
+    <div id="socialProof" class="social-proof-popup">
+        <div class="popup-icon">✨</div>
+        <div class="popup-text">
+            <strong id="proofName">فاطمة من الدار البيضاء</strong>
+            <span>انضمت للتو إلى فريق فيرونا 🚀</span>
+        </div>
+    </div>
+
     <!-- زر الواتساب العائم الفاخر -->
     <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقك مع فيرونا" class="floating-wa" target="_blank">
         💬
@@ -810,7 +870,44 @@
 
         startVisitorCounter();
 
-        // 3. إرسال الاستمارة للواتساب الخاص بكِ
+        // 3. إشعارات الثقة الحية التفاعلية (النقطة 6)
+        const proofList = [
+            { name: "فاطمة الزهراء", city: "الدار البيضاء" },
+            { name: "مريم", city: "مراكش" },
+            { name: "خديجة", city: "أكادير" },
+            { name: "إيمان", city: "الرباط" },
+            { name: "سناء", city: "طنجة" },
+            { name: "حليمة", city: "فاس" },
+            { name: "سمية", city: "مكناس" },
+            { name: "هجر", city: "وجدة" },
+            { name: "أسماء", city: "أزمور" },
+            { name: "نزهة", city: "تطوان" }
+        ];
+
+        function showSocialProof() {
+            const popup = document.getElementById("socialProof");
+            const proofNameEl = document.getElementById("proofName");
+            
+            // اختيار عشوائي لعضوة
+            const randomPerson = proofList[Math.floor(Math.random() * proofList.length)];
+            proofNameEl.textContent = `${randomPerson.name} من ${randomPerson.city}`;
+
+            // إظهار النافذة
+            popup.classList.add("show");
+
+            // إخفاؤها بعد 4 ثوانٍ
+            setTimeout(() => {
+                popup.classList.remove("show");
+            }, 4000);
+        }
+
+        // بدء الإشعارات بعد 5 ثوانٍ من فتح الموقع، ثم تتكرر كل 12 ثانية
+        setTimeout(() => {
+            showSocialProof();
+            setInterval(showSocialProof, 12000);
+        }, 5000);
+
+        // 4. إرسال الاستمارة للواتساب الخاص بكِ
         function sendToWhatsApp(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
