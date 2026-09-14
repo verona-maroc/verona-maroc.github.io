@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي</title>
 
+    <!-- إعدادات المعاينة للواتساب -->
     <meta property="og:title" content="انضمي إلى فريقي مع فيرونا المغرب - بوابتك نحو الاستقلال المالي">
     <meta property="og:description" content="كوني جزءاً من فريقي الناجح مع فيرونا، تدريب راقٍ، ودخل متميز من منزلك.">
     <meta property="og:image" content="logo1.png">
     <meta property="og:type" content="website">
 
+    <!-- خطوط جوجل العربية الفاخرة -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
@@ -200,8 +202,48 @@
             box-shadow: var(--shadow-luxury);
             display: flex;
             flex-direction: column;
-            max-width: 340px;
+            transition: 0.3s;
+            max-width: 650px;
             width: 100%;
+        }
+
+        .video-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* نسبة 16:9 */
+            background: #000;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        .video-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .video-info h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .video-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         /* إحصائيات بصرية راقية */
@@ -654,6 +696,7 @@
 </head>
 <body>
 
+    <!-- الشريط الإشهاري المتحرك -->
     <div class="announcement-bar">
         <div class="marquee-content">
             <span>✨ انضمي إلى فريقي الخاص في شركة فيرونا واحصلي على تدريب حصري ودخل متميز من منزلك</span>
@@ -663,6 +706,7 @@
         </div>
     </div>
 
+    <!-- الهيدر الملكي -->
     <header>
         <div class="logo-container">
             <img src="logo1.png" alt="Verona Logo">
@@ -676,17 +720,27 @@
 
     <div class="container">
         
+        <!-- 🎥 قسم الفيديو الترحيبي -->
         <h2 class="videos-section-title" style="margin-top: 10px;">تعرفي على الفريق وفرصة العمل معنا</h2>
-        <p class="section-subtitle">شاهدي الفيديو التوضيحي لمعرفة تفاصيل العمل</p>
+        <p class="section-subtitle">شاهدي الفيديو التالي لتكتشفي كيف سنبدأ رحلة النجاح معاً</p>
 
         <div class="single-video-layout">
             <div class="video-card">
-                <div class="video-container" style="padding-top: 177.77%; position: relative;">
-                    <video src="video.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"></video>
+                <div class="video-container">
+                    <!-- اسم الفيديو كما طلبته بالضبط -->
+                    <video controls poster="logo1.png">
+                        <source src="video2 (1).mp4" type="video/mp4">
+                        متصفحك لا يدعم عرض الفيديو.
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3>🎬 رسالة ترحيبية وفكرة المشروع</h3>
+                    <p>تعرفي على مميزات الانضمام إلى فريقنا وطبيعة العمل المرن من المنزل.</p>
                 </div>
             </div>
         </div>
 
+        <!-- إحصائيات -->
         <div class="stats-container">
             <div class="stat-box">
                 <div class="stat-num">+100</div>
@@ -702,6 +756,7 @@
             </div>
         </div>
 
+        <!-- لماذا تنضمين إلى فريقنا؟ -->
         <h2 class="section-title">لماذا تنضمين إلى فريقنا؟</h2>
         <p class="section-subtitle">نوفر لكِ بيئة عمل راقية ومصممة خصيصاً لتلائم طموحاتك وتحقيق حريتك المالية</p>
         
@@ -733,6 +788,7 @@
             </div>
         </div>
 
+        <!-- نماذج من منتجات فيرونا المتوفرة للعضوات -->
         <h2 class="section-title">نماذج من منتجات فيرونا المتوفرة للعضوات</h2>
         <p class="section-subtitle">انقري على أي صورة لتكبيرها ورؤيتها بوضوح تام وتفاصيل راقية</p>
         
@@ -767,11 +823,13 @@
             </div>
         </div>
 
+        <!-- نافذة عرض الصورة المكبرة -->
         <div id="imageModal" class="modal" onclick="closeModal()">
             <span class="modal-close">&times;</span>
             <img class="modal-content" id="modalImg">
         </div>
 
+        <!-- آراء العضوات -->
         <h2 class="section-title">صوت النجاح: آراء عضوات فريقي</h2>
         <p class="section-subtitle">شهادات حقيقية من نساء اخترن التغيير والانضمام إلينا</p>
 
@@ -795,6 +853,7 @@
             </div>
         </div>
 
+        <!-- الأسئلة الشائعة -->
         <h2 class="section-title">الأسئلة الشائعة</h2>
         <div class="faq-box">
             <div class="faq-question">❓ هل أحتاج إلى خبرة سابقة لبدء العمل في فريقك؟</div>
@@ -806,6 +865,7 @@
             <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، أرغب في الانضمام إلى فريقك مع فيرونا ومعرفة الخطوات الأولى" class="whatsapp-link-btn" target="_blank">اسألي عبر الواتساب مباشرة</a>
         </div>
 
+        <!-- استمارة التسجيل -->
         <div class="form-card" id="register">
             <h2 class="section-title" style="margin-top:0; font-size: 1.8rem;">سجلي طلب انضمامك إلى فريقي</h2>
             <p class="section-subtitle">أدخلي معلوماتك وسأتواصل معك شخصياً عبر الواتساب في أقرب وقت</p>
@@ -827,6 +887,7 @@
             </form>
         </div>
 
+        <!-- عداد الزوار الحي -->
         <div class="live-counter-box">
             <span class="live-dot"></span>
             <span>هناك <span id="visitorCount">0</span> شخص يتصفحون الموقع الآن</span>
@@ -834,6 +895,7 @@
 
     </div>
 
+    <!-- نافذة إشعارات الثقة الحية -->
     <div id="socialProof" class="social-proof-popup">
         <div class="popup-icon">✨</div>
         <div class="popup-text">
@@ -842,6 +904,7 @@
         </div>
     </div>
 
+    <!-- زر الواتساب العائم -->
     <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، زرت موقعك وأرغب في الانضمام إلى فريقك مع فيرونا" class="floating-wa" target="_blank">
         💬
     </a>
@@ -850,6 +913,7 @@
         <p>جميع الحقوق محفوظة © 2026 - فريق فيرونا المغرب</p>
     </footer>
 
+    <!-- البرمجة التفاعلية -->
     <script>
         // 1. تكبير الصور
         function openModal(element) {
@@ -883,4 +947,62 @@
             function startDynamicLoop() {
                 setInterval(() => {
                     const change = Math.floor(Math.random() * 6) - 2; 
-                    currentCount += change
+                    currentCount += change;
+                    if (currentCount < 16) currentCount = 18; 
+                    if (currentCount > 42) currentCount = 38;
+                    counterElement.textContent = currentCount;
+                }, 4000); 
+            }
+        }
+
+        startVisitorCounter();
+
+        // 3. إشعارات الثقة الحية التفاعلية
+        const proofList = [
+            { name: "فاطمة الزهراء", city: "الدار البيضاء" },
+            { name: "مريم", city: "مراكش" },
+            { name: "خديجة", city: "أكادير" },
+            { name: "إيمان", city: "الرباط" },
+            { name: "سناء", city: "طنجة" },
+            { name: "حليمة", city: "فاس" },
+            { name: "سمية", city: "مكناس" },
+            { name: "هجر", city: "وجدة" },
+            { name: "أسماء", city: "أزمور" },
+            { name: "نزهة", city: "تطوان" }
+        ];
+
+        function showSocialProof() {
+            const popup = document.getElementById("socialProof");
+            const proofNameEl = document.getElementById("proofName");
+            
+            const randomPerson = proofList[Math.floor(Math.random() * proofList.length)];
+            proofNameEl.textContent = `${randomPerson.name} من ${randomPerson.city}`;
+
+            popup.classList.add("show");
+
+            setTimeout(() => {
+                popup.classList.remove("show");
+            }, 4000);
+        }
+
+        setTimeout(() => {
+            showSocialProof();
+            setInterval(showSocialProof, 12000);
+        }, 5000);
+
+        // 4. إرسال الاستمارة للواتساب الخاص بكِ
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const city = document.getElementById('city').value;
+            const message = document.getElementById('message').value;
+
+            const phone = "212618283321"; 
+            const text = `✨ طلب انضمام جديد إلى فريقي مع فيرونا:%0A%0A*الاسم:* ${name}%0A*المدينة:* ${city}%0A*الرسالة:* ${message || 'لا توجد ملاحظات إضافية'}`;
+            
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
