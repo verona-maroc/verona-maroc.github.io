@@ -50,6 +50,22 @@
             overflow-x: hidden;
         }
 
+        /* تأثير نبضات القلب (Pulse Animation) لأزرار الواتساب */
+        @keyframes whatsappPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
         .announcement-bar {
             background: linear-gradient(90deg, #f3e8ff, #fae8ff, #f3e8ff);
             color: var(--accent-gold);
@@ -651,9 +667,19 @@
             text-decoration: none;
             transition: 0.3s;
             border: 2px solid rgba(255,255,255,0.9);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* تطبيق نبضات القلب على زر الواتساب العائم وبشكل مستمر */
+        .floating-wa {
             background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
             color: white;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: whatsappPulse 2s infinite;
+        }
+
+        .floating-call {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
         }
 
         .floating-wa:hover, .floating-call:hover {
@@ -746,7 +772,7 @@
             line-height: 1.6;
         }
 
-        /* زر الواتساب في الصفحة الثانية بنفس اللون الأخضر الأنيق */
+        /* زر الواتساب في الصفحة الثانية بنفس اللون الأخضر وتأثير النبض البصري */
         .page2-whatsapp-btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--wa-green), var(--wa-green-dark));
@@ -758,12 +784,14 @@
             font-weight: 700;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
+            animation: whatsappPulse 2s infinite;
         }
 
         .page2-whatsapp-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
             background: linear-gradient(135deg, #2ebd60, var(--wa-green));
+            animation: none;
         }
 
         footer {
@@ -969,7 +997,7 @@
         </div>
     </div>
 
-    <!-- الصفحة الثانية: مع التعديل المطلوب (الأرقام وأزرار الواتساب باللون الأخضر) -->
+    <!-- الصفحة الثانية: مع الأرقام وأزرار الواتساب باللون الأخضر وتأثير النبض -->
     <div id="page2" class="page-content">
         <div class="container">
             
@@ -1016,7 +1044,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
-                    ### مجموعة نسائية متضامنة
+                    <h3>مجموعة نسائية متضامنة</h3>
                     <p>غادي تلقاي عائلة ديال النساء كيشجعوك، يعاونوك، ويفرحوا معاك بكل خطوة نجاح.</p>
                 </div>
             </div>
@@ -1043,7 +1071,7 @@
                 </div>
             </div>
 
-            <!-- زر الواتساب في الصفحة الثانية باللون الأخضر -->
+            <!-- زر الواتساب في الصفحة الثانية باللون الأخضر وتأثير النبض -->
             <div style="text-align: center; margin: 40px 0 20px 0;">
                 <a href="https://api.whatsapp.com/send?phone=212618283321&text=مرحباً، قريت قصص النجاح فالموقع وبغيت حتى أنا ندخل للفريق ونبدأ من داري" class="page2-whatsapp-btn" target="_blank">
                     💬 تواصل معنا فواتساب وابدئي دابا
