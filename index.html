@@ -32,18 +32,24 @@
             font-family: 'Tajawal', sans-serif;
         }
 
-        /* الخلفية البيضاء النقية والراقية */
+        /* الخلفية المتدرجة الفاخرة والمتحركة بسلاسة */
         body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 50% 10%, rgba(192, 132, 252, 0.08) 0%, transparent 45%),
-                radial-gradient(circle at 10% 90%, rgba(147, 51, 234, 0.05) 0%, transparent 40%);
+            background: linear-gradient(135deg, #fcfbfe 0%, #f3e8ff 50%, #fcfbfe 100%);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
             background-attachment: fixed;
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.8;
             padding-bottom: 60px;
             overflow-x: hidden;
+        }
+
+        /* حركة التدرج الهادئة في الخلفية */
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* شريط إعلاني متحرك فاخر */
