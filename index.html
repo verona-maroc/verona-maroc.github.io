@@ -14,16 +14,16 @@
 
     <style>
         :root {
-            --bg-primary: #070707;
-            --bg-card: #111111;
-            --bg-card-hover: #181818;
-            --text-main: #ffffff;
-            --text-muted: #b0b0b0;
-            --gold-primary: #dfb777;
-            --gold-light: #f5dfb4;
-            --gold-dark: #b89151;
-            --border-gold: rgba(223, 183, 119, 0.2);
-            --shadow-gold: 0 12px 35px rgba(223, 183, 119, 0.15);
+            --bg-color: #0b0b0b;
+            --surface-color: #141414;
+            --surface-card: #1c1c1c;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --accent-gold: #dfb777;
+            --accent-gold-light: #f3d8a7;
+            --accent-gold-dark: #b89151;
+            --border-gold: rgba(223, 183, 119, 0.25);
+            --shadow-luxury: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -34,7 +34,7 @@
         }
 
         body {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.8;
@@ -44,9 +44,9 @@
 
         /* شريط إعلاني متحرك فاخر */
         .announcement-bar {
-            background: linear-gradient(90deg, #111, #1e1e1e, #111);
-            color: var(--gold-primary);
-            padding: 12px 0;
+            background: linear-gradient(90deg, #111, #222, #111);
+            color: var(--accent-gold);
+            padding: 10px 0;
             overflow: hidden;
             white-space: nowrap;
             border-bottom: 1px solid var(--border-gold);
@@ -55,15 +55,15 @@
         .marquee-content {
             display: inline-block;
             white-space: nowrap;
-            animation: marqueeAnimation 40s linear infinite;
+            animation: marqueeAnimation 35s linear infinite;
         }
 
         .marquee-content span {
             display: inline-block;
             padding-left: 60px;
             font-weight: 500;
-            font-size: 0.92rem;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            letter-spacing: 0.8px;
         }
 
         @keyframes marqueeAnimation {
@@ -71,84 +71,104 @@
             100% { transform: translateX(100%); }
         }
 
-        /* هيدر عصري متألق */
+        /* هيدر ملكي */
         header {
-            background: linear-gradient(135deg, rgba(15,15,15,0.85), rgba(7,7,7,0.92)), url('logo1.png');
+            background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(10,10,10,0.65)), url('logo1.png');
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
             color: #ffffff;
-            padding: 75px 20px;
+            padding: 65px 20px;
             text-align: center;
-            border-bottom: 1px solid var(--border-gold);
+            border-bottom: 2px solid var(--accent-gold);
             position: relative;
         }
 
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, rgba(223,183,119,0.03) 0%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+
         .logo-container img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: contain;
-            background-color: #1a1a1a;
-            border: 2px solid var(--gold-primary);
-            box-shadow: 0 0 30px rgba(223, 183, 119, 0.25);
-            margin-bottom: 22px;
-            padding: 8px;
+            background-color: #ffffff;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 35px rgba(223, 183, 119, 0.3);
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        header h1, header h2, header p, .badge-alert, .btn-main {
+            position: relative;
+            z-index: 2;
         }
 
         .badge-alert {
-            background: rgba(223, 183, 119, 0.08);
-            color: var(--gold-primary);
-            border: 1px solid var(--border-gold);
-            padding: 6px 20px;
+            background: rgba(223, 183, 119, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 22px;
             border-radius: 30px;
             font-size: 0.85rem;
             display: inline-block;
             margin-bottom: 18px;
             font-weight: 600;
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(223,183,119,0.1);
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
+            font-size: 2.6rem;
+            margin-bottom: 5px;
             font-weight: 900;
             color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
         header h2 {
             font-size: 1.1rem;
             margin-bottom: 20px;
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             font-weight: 400;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         header p {
             font-size: 1.05rem;
-            max-width: 620px;
+            max-width: 650px;
             margin: 0 auto 30px auto;
-            color: var(--text-muted);
+            color: #dedede;
             font-weight: 300;
         }
 
         .btn-main {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #0b0b0b;
-            padding: 15px 42px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
+            padding: 15px 40px;
             font-size: 1.1rem;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 35px;
             font-weight: 700;
-            box-shadow: var(--shadow-gold);
+            box-shadow: 0 8px 25px rgba(223, 183, 119, 0.3);
             transition: all 0.3s ease;
         }
 
         .btn-main:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(223, 183, 119, 0.3);
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            box-shadow: 0 12px 30px rgba(223, 183, 119, 0.5);
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
         }
 
         .container {
@@ -157,11 +177,11 @@
             padding: 0 20px;
         }
 
-        /* قسم الفيديو الفاخر */
+        /* 🎥 قسم الفيديو الترحيبي */
         .videos-section-title {
             text-align: center;
-            margin: 15px 0 5px 0;
-            color: var(--gold-primary);
+            margin: 10px 0 10px 0;
+            color: var(--accent-gold);
             font-size: 2rem;
             font-weight: 800;
         }
@@ -173,14 +193,14 @@
         }
 
         .video-card {
-            background: var(--bg-card);
-            border-radius: 24px;
+            background: var(--surface-card);
+            border-radius: 20px;
             overflow: hidden;
             border: 1px solid var(--border-gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            box-shadow: var(--shadow-luxury);
             display: flex;
             flex-direction: column;
-            max-width: 330px;
+            max-width: 340px;
             width: 100%;
         }
 
@@ -193,25 +213,26 @@
         }
 
         .stat-box {
-            background: var(--bg-card);
+            background: var(--surface-card);
             padding: 30px 20px;
-            border-radius: 18px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
-            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
         }
 
         .stat-box:hover {
             transform: translateY(-5px);
-            border-color: var(--gold-primary);
-            background: var(--bg-card-hover);
+            border-color: var(--accent-gold);
         }
 
         .stat-num {
-            font-size: 2.4rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             margin-bottom: 5px;
         }
 
@@ -225,7 +246,7 @@
             text-align: center;
             margin: 60px 0 10px 0;
             color: #ffffff;
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
         }
 
@@ -241,45 +262,45 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
             margin-bottom: 60px;
         }
 
         .feature-card {
-            background: var(--bg-card);
-            padding: 35px 28px;
-            border-radius: 18px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background: var(--surface-card);
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-6px);
-            background: var(--bg-card-hover);
+            border-color: var(--accent-gold);
+            transform: translateY(-7px);
+            background: #222;
         }
 
         .feature-icon {
-            font-size: 2.6rem;
-            margin-bottom: 18px;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
         }
 
         .feature-card h3 {
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             margin-bottom: 12px;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
         }
 
         .feature-card p {
             color: var(--text-muted);
-            font-size: 0.93rem;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        /* معرض المنتجات بتصميم عصري */
+        /* معرض المنتجات */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -288,39 +309,39 @@
         }
 
         .product-item {
-            background: var(--bg-card);
-            border-radius: 18px;
+            background: var(--surface-card);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
             cursor: pointer;
             transition: all 0.4s ease;
         }
 
         .product-item:hover {
-            transform: translateY(-6px);
-            border-color: var(--gold-primary);
-            box-shadow: var(--shadow-gold);
+            transform: translateY(-7px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(223, 183, 119, 0.2);
         }
 
         .product-item img {
             width: 100%;
-            height: 240px;
+            height: 250px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
         .product-item:hover img {
-            transform: scale(1.06);
+            transform: scale(1.08);
         }
 
         .product-name {
-            padding: 16px;
+            padding: 18px;
             text-align: center;
             font-weight: 700;
             color: var(--text-main);
-            font-size: 0.95rem;
-            background: var(--bg-card);
+            font-size: 0.98rem;
+            background: var(--surface-card);
             border-top: 1px solid var(--border-gold);
         }
 
@@ -333,7 +354,7 @@
             left: 0; top: 0;
             width: 100%; height: 100%;
             background-color: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
             text-align: center;
         }
 
@@ -342,21 +363,21 @@
             display: block;
             max-width: 85%;
             max-height: 80vh;
-            border-radius: 14px;
-            border: 2px solid var(--gold-primary);
+            border-radius: 12px;
+            border: 2px solid var(--accent-gold);
             box-shadow: 0 0 40px rgba(223,183,119,0.3);
-            animation: zoomModal 0.3s ease;
+            animation: zoomModal 0.3s;
         }
 
         @keyframes zoomModal {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from { transform: scale(0); }
+            to { transform: scale(1); }
         }
 
         .modal-close {
             position: absolute;
             top: 25px; left: 35px;
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             font-size: 45px;
             font-weight: 300;
             cursor: pointer;
@@ -365,23 +386,23 @@
 
         .modal-close:hover { color: #fff; }
 
-        /* آراء العضوات بتصميم فقاعات واتساب أنيقة */
+        /* آراء العضوات */
         .whatsapp-reviews-container {
             display: flex;
             flex-direction: column;
             gap: 18px;
             max-width: 750px;
             margin: 0 auto 60px auto;
-            background: var(--bg-card);
+            background: var(--surface-card);
             padding: 35px 25px;
             border-radius: 20px;
             border: 1px solid var(--border-gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow-luxury);
         }
 
         .wa-chat-bubble {
-            background: #161616;
-            padding: 18px 22px;
+            background: #222;
+            padding: 16px 20px;
             border-radius: 0 16px 16px 16px;
             max-width: 85%;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -397,45 +418,45 @@
         }
 
         .wa-text {
-            color: #dedede;
-            font-size: 0.96rem;
+            color: #e0e0e0;
+            font-size: 0.98rem;
             line-height: 1.6;
         }
 
         .wa-time {
-            font-size: 0.73rem;
-            color: #777;
+            font-size: 0.75rem;
+            color: #888;
             text-align: left;
             margin-top: 6px;
         }
 
         /* الأسئلة الشائعة */
         .faq-box {
-            background: var(--bg-card);
+            background: var(--surface-card);
             padding: 40px;
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border-radius: 16px;
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
             margin-bottom: 60px;
         }
 
         .faq-question {
             font-weight: 700;
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             margin-top: 25px;
             margin-bottom: 8px;
-            font-size: 1.08rem;
+            font-size: 1.1rem;
         }
 
         .faq-answer {
             color: var(--text-muted);
-            font-size: 0.93rem;
+            font-size: 0.95rem;
             margin-bottom: 15px;
         }
 
         .whatsapp-link-btn {
             display: inline-block;
-            background: rgba(37, 211, 102, 0.08);
+            background: rgba(37, 211, 102, 0.1);
             color: #25d366;
             padding: 6px 14px;
             border-radius: 8px;
@@ -443,7 +464,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
-            border: 1px solid rgba(37, 211, 102, 0.25);
+            border: 1px solid rgba(37, 211, 102, 0.3);
         }
 
         .whatsapp-link-btn:hover {
@@ -451,13 +472,13 @@
             color: white;
         }
 
-        /* استمارة التسجيل الفاخرة */
+        /* استمارة التسجيل */
         .form-card {
-            background: var(--bg-card);
+            background: var(--surface-card);
             padding: 45px;
             border-radius: 20px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.6);
-            border: 1px solid var(--gold-primary);
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--accent-gold);
             margin-bottom: 40px;
         }
 
@@ -469,7 +490,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             font-size: 0.95rem;
         }
 
@@ -477,50 +498,50 @@
             width: 100%;
             padding: 14px 18px;
             border: 1px solid var(--border-gold);
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1rem;
-            background: #050505;
+            background: #0f0f0f;
             color: white;
             transition: all 0.3s;
         }
 
         .input-group input:focus, .input-group textarea:focus {
-            border-color: var(--gold-primary);
-            background: #111;
+            border-color: var(--accent-gold);
+            background: #181818;
             outline: none;
-            box-shadow: 0 0 12px rgba(223, 183, 119, 0.2);
+            box-shadow: 0 0 10px rgba(223, 183, 119, 0.2);
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #0b0b0b;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
+            color: #111;
             border: none;
             padding: 16px;
             width: 100%;
             font-size: 1.1rem;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             font-weight: 700;
             transition: 0.3s;
-            box-shadow: var(--shadow-gold);
+            box-shadow: 0 5px 20px rgba(223, 183, 119, 0.3);
         }
 
         .submit-btn:hover {
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+            background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-gold));
             transform: translateY(-2px);
         }
 
         /* عداد الزوار الحي */
         .live-counter-box {
-            background: var(--bg-card);
+            background: var(--surface-card);
             max-width: 340px;
             margin: 0 auto 30px auto;
             padding: 14px 25px;
             border-radius: 35px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            box-shadow: var(--shadow-luxury);
             border: 1px solid var(--border-gold);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             font-weight: 600;
             color: var(--text-muted);
             display: flex;
@@ -545,17 +566,17 @@
             100% { opacity: 0.3; }
         }
 
-        /* إشعارات الثقة الحية */
+        /* إشعارات الثقة الحية التفاعلية */
         .social-proof-popup {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            background: rgba(18, 18, 18, 0.96);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--gold-primary);
+            background: rgba(28, 28, 28, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent-gold);
             padding: 12px 18px;
             border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             z-index: 1500;
             display: flex;
             align-items: center;
@@ -573,7 +594,7 @@
 
         .popup-icon {
             font-size: 24px;
-            background: rgba(223, 183, 119, 0.12);
+            background: rgba(223, 183, 119, 0.15);
             width: 40px;
             height: 40px;
             display: flex;
@@ -591,7 +612,7 @@
         }
 
         .popup-text strong {
-            color: var(--gold-primary);
+            color: var(--accent-gold);
             display: block;
             font-size: 0.9rem;
         }
@@ -610,7 +631,7 @@
             align-items: center;
             justify-content: center;
             font-size: 30px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
             z-index: 1000;
             text-decoration: none;
             transition: 0.3s;
@@ -624,7 +645,7 @@
         footer {
             text-align: center;
             padding: 30px;
-            background: #040404;
+            background: #080808;
             color: var(--text-muted);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-gold);
@@ -661,7 +682,7 @@
         <div class="single-video-layout">
             <div class="video-card">
                 <div class="video-container" style="padding-top: 177.77%; position: relative;">
-                    <video src="video22.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 24px;"></video>
+                    <video src="video22.mp4" controls autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;"></video>
                 </div>
             </div>
         </div>
@@ -863,4 +884,61 @@
                 setInterval(() => {
                     const change = Math.floor(Math.random() * 6) - 2; 
                     currentCount += change;
-                    if (currentCount < 16)
+                    if (currentCount < 16) currentCount = 18; 
+                    if (currentCount > 42) currentCount = 38;
+                    counterElement.textContent = currentCount;
+                }, 4000); 
+            }
+        }
+
+        startVisitorCounter();
+
+        // 3. إشعارات الثقة الحية التفاعلية
+        const proofList = [
+            { name: "فاطمة الزهراء", city: "الدار البيضاء" },
+            { name: "مريم", city: "مراكش" },
+            { name: "خديجة", city: "أكادير" },
+            { name: "إيمان", city: "الرباط" },
+            { name: "سناء", city: "طنجة" },
+            { name: "حليمة", city: "فاس" },
+            { name: "سمية", city: "مكناس" },
+            { name: "هجر", city: "وجدة" },
+            { name: "أسماء", city: "أزمور" },
+            { name: "نزهة", city: "تطوان" }
+        ];
+
+        function showSocialProof() {
+            const popup = document.getElementById("socialProof");
+            const proofNameEl = document.getElementById("proofName");
+            
+            const randomPerson = proofList[Math.floor(Math.random() * proofList.length)];
+            proofNameEl.textContent = `${randomPerson.name} من ${randomPerson.city}`;
+
+            popup.classList.add("show");
+
+            setTimeout(() => {
+                popup.classList.remove("show");
+            }, 4000);
+        }
+
+        setTimeout(() => {
+            showSocialProof();
+            setInterval(showSocialProof, 12000);
+        }, 5000);
+
+        // 4. إرسال الاستمارة للواتساب الخاص بكِ
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const city = document.getElementById('city').value;
+            const message = document.getElementById('message').value;
+
+            const phone = "212618283321"; 
+            const text = `✨ طلب انضمام جديد إلى فريقي مع فيرونا:%0A%0A*الاسم:* ${name}%0A*المدينة:* ${city}%0A*الرسالة:* ${message || 'لا توجد ملاحظات إضافية'}`;
+            
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
