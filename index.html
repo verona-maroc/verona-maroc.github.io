@@ -114,6 +114,7 @@
             position: relative;
         }
 
+        /* تنسيق اللوغو ليظهر بشكل دائري متناسق وثابت على جميع المتصفحات */
         .logo-container {
             position: relative;
             z-index: 2;
@@ -128,6 +129,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
         }
 
         .logo-bg-video {
@@ -987,13 +990,13 @@
         </div>
 
         <header>
+            <!-- الشعار بشكل دائري دقيق ومستقر على جميع المتصفحات -->
             <div class="logo-container">
                 <video autoplay muted loop playsinline class="logo-bg-video">
                     <source src="video1.mp4" type="video/mp4">
                 </video>
             </div>
 
-            <!-- الشارة المعدلة -->
             <div class="badge-alert">✦ انضمي إلى نخبة فريقنا هذا الشهر ✦</div>
             <h1>انضمي إلى فريقنا مع فيرونا</h1>
             <h2>VERONA PRODUCTS PROFESSIONAL</h2>
